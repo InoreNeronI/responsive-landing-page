@@ -1,0 +1,37 @@
+{
+  "name": "responsive-website",
+  "version": "1.0.0",
+  "description": "Responsive Halloween Website Design Using HTML CSS & JavaScript",
+  "repository": "https://github.com/mmozos/responsive-website",
+  "author": "mmozos <martinmozos@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "parcel build templates/*.html",
+    "start": "parcel serve templates/*.html --open"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.0.0",
+    "autoprefixer": "^10.3.7",
+    "parcel": "^2.0.0",
+    "posthtml-extend": "^0.6.0",
+    "posthtml-include": "^1.7.2"
+  },
+  "dependencies": {
+    "scrollreveal": "^4.0.9",
+    "swiper": "^7.2.0"
+  },
+  "alias": {
+    "scrollreveal": {
+      "global": "ScrollReveal"
+    },
+    "swiper": {
+      "global": "Swiper"
+    }
+  },
+  "targets": {
+    "default": {
+      "context": "browser"
+    }
+  }
+}
