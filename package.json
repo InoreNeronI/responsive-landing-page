@@ -11,15 +11,15 @@
     "start": "parcel serve templates/*.html --open"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "2.0.0",
-    "autoprefixer": "^10.4.0",
-    "parcel": "^2.0.0",
-    "posthtml-extend": "^0.6.0",
-    "posthtml-include": "^1.7.2"
+    "@parcel/transformer-postcss": "^2.9.3",
+    "@parcel/transformer-sass": "2.9.3",
+    "parcel": "^2.9.3",
+    "posthtml-extend": "^0.6.5",
+    "posthtml-include": "^1.7.4"
   },
   "dependencies": {
     "scrollreveal": "^4.0.9",
-    "swiper": "^7.2.0"
+    "swiper": "^10.0.4"
   },
   "alias": {
     "scrollreveal": {
