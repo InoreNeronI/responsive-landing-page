@@ -30,13 +30,16 @@ function linkAction() {
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
 /*=============== HOME SWIPER ===============*/
-let homeSwiper = new Swiper('.home-swiper', {
-    spaceBetween: 30,
+/*let homeSwiper = */new Swiper('.home-swiper', {
+    autoplay: {
+        delay: 4000
+    },
     loop: 'true',
     pagination: {
         el: '.swiper-pagination',
-        clickable: true,
-      },
+        clickable: true
+    },
+    spaceBetween: 30
 })
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
@@ -52,7 +55,7 @@ function scrollHeader() {
 window.addEventListener('scroll', scrollHeader);
 
 /*=============== NEW SWIPER ===============*/
-let newSwiper = new Swiper('.new-swiper', {
+/*let newSwiper = */new Swiper('.new-swiper', {
     centeredSlides: true,
     slidesPerView: 'auto',
     loop: 'true',
@@ -79,7 +82,7 @@ function scrollActive() {
 }
 window.addEventListener('scroll', scrollActive);
 
-/*=============== SHOW SCROLL UP ===============*/ 
+/*=============== SHOW SCROLL UP ===============*/
 function scrollUp() {
     const scrollUp = document.getElementById('scroll-up');
     // When the scroll is higher than 460 viewport height, add the show-scroll class to the a tag with the scroll-top class
