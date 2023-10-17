@@ -2,20 +2,23 @@
 @use 'sass:list';
 @use 'sass:map';
 
-$colors: (
-  dark: (hsl(30, 8%, 8%), hsl(18, 28%, 40%), hsl(58, 28%, 40%)),
-  light: (hsl(30, 8%, 8%), hsl(360, 28%, 40%), hsl(104, 28%, 40%)));
-$color: random(list.length(map.get($colors, dark)));
-$color-random-dark: list.nth(map.get($colors, dark), $color);
-$color-random-light: list.nth(map.get($colors, light), $color);
+// Define color names and values
+$default: ('dark': #131416, 'light': #fdbe00) !default;
+$green: ('dark': #838149, 'light': #588349) !default;
+$red: ('dark': #835b49, 'light': #834949) !default;
+
+// Get random color pair
+$color: list.nth(($default, $green, $red), random(list.length(default green red))) !default;
 
 // @see https://github.com/bedimcode/responsive-halloween-website/blob/main/assets/scss/config/_variables.scss
 :root {
+  --color-dark: #{map.get($color, 'dark')};
+  --color-light: #{map.get($color, 'light')};
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  --body-color: linear-gradient(90deg, #{$color-random-light} 0%, #{$color-random-dark} 100%);
-  --container-color: linear-gradient(136deg, lighten(#{$color-random-light}) 0%, lighten(#{$color-random-dark}) 100%);
+  --body-color: linear-gradient(90deg, var(--color-light) 0%, var(--color-dark) 100%);
+  --container-color: linear-gradient(136deg, lighten(var(--color-light)) 0%, lighten(var(--color-dark)) 100%);
   --hue: 14;
   --first-color: hsl(var(--hue), 91%, 54%);
   --first-color-alt: hsl(var(--hue), 91%, 50%);
@@ -24,11 +27,11 @@ $color-random-light: list.nth(map.get($colors, light), $color);
   --text-color-light: hsl(var(--hue), 4%, 55%);
 
   /*========== Font and typography ==========*/
-  --body-font: #{$font-family-default};
+  --body-font: #{$font-family};
   --biggest-font-size: 2.25rem;
   --h1-font-size: 1.75rem;
   --h2-font-size: 1.3333rem;
-  --h3-font-size: #{$font-size-default};
+  --h3-font-size: #{$font-size};
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
   --smaller-font-size: .75rem;
@@ -39,15 +42,15 @@ $color-random-light: list.nth(map.get($colors, light), $color);
     --h1-font-size: 2.25rem;
     --h2-font-size: 1.75rem;
     --h3-font-size: 1.3333rem;
-    --normal-font-size: #{$font-size-default};
+    --normal-font-size: #{$font-size};
     --small-font-size: .938rem;
     --smaller-font-size: .813rem;
   }
 
   /*========== Font weight ==========*/
-  --font-medium: #{$font-weight-default};
-  --font-semi-bold: #{$font-weight-default};
-  --font-black: #{$font-weight-default};
+  --font-medium: #{$font-weight};
+  --font-semi-bold: #{$font-weight};
+  --font-black: #{$font-weight};
 
   /*========== Margin bottom ==========*/
   --mb-0-25: .25rem;
