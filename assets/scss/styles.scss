@@ -1,3 +1,20 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+}
 @import 'components/font';
 @import 'components/colors';
 @import 'components/layout';

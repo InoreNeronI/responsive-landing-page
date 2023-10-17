@@ -2,29 +2,54 @@
 @use 'sass:list';
 @use 'sass:map';
 
-// Define color names and values
-$default: ('dark': #131416, 'light': #fdbe00) !default;
-$green: ('dark': #838149, 'light': #588349) !default;
-$red: ('dark': #835b49, 'light': #834949) !default;
+// Define "4 Elements" color names and values
+$fire: ('dark': #835b49, 'light': #834949) !default;
+$earth: ('dark': #838149, 'light': #588349) !default;
+$air: ('dark': #131416, 'light': #fdbe00) !default;
+$water: ('dark': #000d2f, 'light': #68ceb5) !default;
 
 // Get random color pair
-$color: list.nth(($default, $green, $red), random(list.length(default green red))) !default;
+$color: list.nth(($fire, $earth, $air, $water), random(list.length(fire earth air water))) !default;
 
 // @see https://github.com/bedimcode/responsive-halloween-website/blob/main/assets/scss/config/_variables.scss
 :root {
-  --color-dark: #{map.get($color, 'dark')};
-  --color-light: #{map.get($color, 'light')};
   --header-height: 3.5rem;
+  // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --dropdown-height: 0;
+  --rotate-arrow: 0;
+  --translate-value: 0;
+  --list-opacity: 0;
+  --transition-time: 0.4s;
+  --transition-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --border-radius: 1.4rem;
+  --list-button-height: 1.8rem;
+  --floating-icon-size: 26;
+  --floating-icon-top: 0;
+  --floating-icon-left: 0;
 
   /*========== Colors ==========*/
+  --color-dark: #{map.get($color, 'dark')};
+  --color-light: #{map.get($color, 'light')};
+  --primary-bg-color: var(--color-dark); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --primary-color: var(--color-light); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --button-hover-bg-color: var(--color-dark); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --border-color: var(--color-light); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
   --body-color: linear-gradient(90deg, var(--color-light) 0%, var(--color-dark) 100%);
   --container-color: linear-gradient(136deg, lighten(var(--color-light)) 0%, lighten(var(--color-dark)) 100%);
+  --container-color-repeating: repeating-linear-gradient(
+    135deg, /* @see https://css-tricks.com/snippets/css/css-repeating-gradients */
+    var(--color-light),
+    var(--color-light) 10px,
+    var(--color-dark) 10px,
+    var(--color-dark) 20px /* determines size */
+  );
   --hue: 14;
   --first-color: hsl(var(--hue), 91%, 54%);
   --first-color-alt: hsl(var(--hue), 91%, 50%);
   --title-color: hsl(var(--hue), 4%, 100%);
   --text-color: hsl(var(--hue), 4%, 85%);
   --text-color-light: hsl(var(--hue), 4%, 55%);
+  --text-active: var(--text-color); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
 
   /*========== Font and typography ==========*/
   --body-font: #{$font-family};

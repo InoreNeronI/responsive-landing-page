@@ -1,8 +1,8 @@
 
 /*=============== Font ===============*/
-$font-family: 'Creepster', 'Helvetica Neue', Helvetica, 'Segoe UI', sans-serif;
-$font-size: 1.15rem;
-$font-weight: 400;
+$font-family: 'Creepster', 'Helvetica Neue', Helvetica, 'Segoe UI', sans-serif !default;
+$font-size: 1.15rem !default;
+$font-weight: 400 !default;
 @font-face {
   font-family: 'Creepster';
   font-style: normal;
