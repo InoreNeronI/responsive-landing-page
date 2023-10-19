@@ -1,10 +1,6 @@
 
-// @see https://web.archive.org/web/20221207055510/https://john-dugan.com/javascript-debounce
-// @see https://github.com/johndugan/javascript-debounce
-const debounce = function(e,t,n){var a;return function(){var r=this,i=arguments,o=function(){a=null,n||e.apply(r,i)},s=n&&!a;clearTimeout(a),a=setTimeout(o,t||200),s&&e.apply(r,i)}};
-
 // @see https://codepen.io/2kool2/pen/LZaXay
-export default () => {
+export const modal = (window, d, debounce) => {
 
   "use strict";
 
@@ -18,10 +14,10 @@ export default () => {
   // make lightbox the modal section and code around it?
   // perhaps <section class=modal = lightbox
   //            <div =modal_inner = modal?
-  // lightbox doesn't need to be in keychain just add onclick to close
+  // lightbox doesnt need to be in keychain just add onclick to close
 
   // To do:
-  //    Option to set an ideal pop-up size e.g. an image
+  //    Option to set an ideal pop-up size eg an image
   //      - maintain the aspect ratio
   //      - centre it
 
@@ -41,7 +37,7 @@ export default () => {
   var modalDesc = "Tab or Shift + Tab to move focus.";
 
   var _setContentObjs = function (isModalOpen) {
-    var objs = debounce.getElementsByClassName("-" + modalName);
+    var objs = d.getElementsByClassName("-" +modalName);
     var i = objs.length;
     while (i--) {
       if (!!isModalOpen) {
@@ -59,16 +55,16 @@ export default () => {
 
   var _closeModal = function (e) {
     var count = e.target.count; // = lightbox, modal (ESC key), close btn
-    var modalSection = debounce.getElementById(modalName + "_" + count);
-    var lightbox = debounce.getElementById(modalName + "_" + count + "_" + lightboxClass);
+    var modalSection = d.getElementById(modalName + "_" + count);
+    var lightbox = d.getElementById(modalName + "_" + count + "_" + lightboxClass);
     var modalLink;
     if (modalSection) {
       modalSection.setAttribute("aria-hidden", "true");
       lightbox.className = lightbox.className.replace(lightboxClass + "-on", "");
 
       _setContentObjs(!modalSection.getAttribute("aria-hidden"));
-      modalLink = debounce.getElementById(modalSection.returnId);
-      debounce.body.classList.remove(openClass);
+      modalLink = d.getElementById(modalSection.returnId);
+      d.body.classList.remove(openClass);
       modalLink.focus();
     }
   };
@@ -91,7 +87,7 @@ export default () => {
     var iframes;
     var ii;
 
-    var modals = debounce.getElementsByClassName(modalName);
+    var modals = d.getElementsByClassName(modalName);
     var i = modals.length;
 
     while (i--) {
@@ -116,7 +112,7 @@ export default () => {
     var iframe;
     if (!frames[0]) {
 
-      iframe = debounce.createElement("iframe");
+      iframe = d.createElement("iframe");
 
       // Don't display iframe until it's content is ready
       iframe.addEventListener("load", function () {
@@ -134,7 +130,7 @@ export default () => {
       iframe.setAttribute("allowfullscreen", true);
 
       // Add iframe before the close button
-      close_lnk = debounce.getElementById(modalName + "_" + modalSection.count + "_lnk_close");
+      close_lnk = d.getElementById(modalName + "_" + modalSection.count + "_lnk_close");
       modalSection.insertBefore(iframe, close_lnk);
 
     }
@@ -163,8 +159,8 @@ export default () => {
       var count = target.count;
       var tempId = modalName + "_" + count;
       var tempLightboxClass = modalName + "_" + lightboxClass;
-      var modalSection = debounce.getElementById(tempId);
-      var lightbox = debounce.getElementById(tempId + "_" + lightboxClass);
+      var modalSection = d.getElementById(tempId);
+      var lightbox = d.getElementById(tempId + "_" + lightboxClass);
 
       if (modalSection && lightbox) {
         if (!lightbox.className.match(tempLightboxClass + "-on")) {
@@ -175,8 +171,8 @@ export default () => {
 
         _setContentObjs(!!modalSection.getAttribute("aria-hidden"));
 
-        debounce.body.classList.add(openClass);
-        debounce.getElementById(modalName + "_" + count + "_title").focus();
+        d.body.classList.add(openClass);
+        d.getElementById(modalName + "_" + count + "_title").focus();
       }
     }
   };
@@ -222,7 +218,7 @@ export default () => {
       if (target.classList.contains(modalName + "_title")) {
         e.preventDefault();
         //focus on last object in modal (close btn)
-        debounce.getElementById(modalName + "_" + e.target.count + "_lnk_close").focus();
+        d.getElementById(modalName + "_" + e.target.count + "_lnk_close").focus();
       }
     }
 
@@ -231,7 +227,7 @@ export default () => {
       if (target.classList.contains(modalName + "_lnk-close")) {
         e.preventDefault();
         //focus on first object in modal - or should it be the modal? Requires testing
-        debounce.getElementById(modalName + "_" + e.target.count + "_title").focus();
+        d.getElementById(modalName + "_" + e.target.count + "_title").focus();
       }
     }
 
@@ -254,7 +250,7 @@ export default () => {
   };
 
   var _getModalTitle = function (modalLink) {
-    var title = debounce.createElement("h1");
+    var title = d.createElement("h1");
     title.id = modalName + "_" + modalLink.count + "_title";
     title.className = modalName + "_title";
     title.tabIndex = 0;
@@ -265,21 +261,21 @@ export default () => {
   };
 
   var _getModalSVG = function (icon, clss, title) {
-    var svg = debounce.createElementNS("http://www.w3.org/2000/svg", "svg");
+    var svg = d.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.classList.add(clss);
     if (title) {
-      var t = debounce.createElementNS("http://www.w3.org/2000/svg", "title");
+      var t = d.createElementNS("http://www.w3.org/2000/svg", "title");
       t.textContent = title;
       svg.appendChild(t);
     }
-    var use = debounce.createElementNS("http://www.w3.org/2000/svg", "use");
+    var use = d.createElementNS("http://www.w3.org/2000/svg", "use");
     use.setAttributeNS("http://www.w3.org/1999/xlink", "href", "#" + icon);
     svg.appendChild(use);
     return svg;
   };
 
   var _getModalDesc = function (modalLink) {
-    var desc = debounce.createElement("p");
+    var desc = d.createElement("p");
     desc.id = modalName + "_" + modalLink.count + "_desc";
     desc.className = modalName + "_desc";
     desc.tabIndex = 0;
@@ -290,7 +286,7 @@ export default () => {
   };
 
   var _getModalCloseLink = function (modalLink) {
-    var link = debounce.createElement("a");
+    var link = d.createElement("a");
     link.id = modalName + "_" + modalLink.count + "_lnk_close";
     link.className = modalName + "_lnk-close";
     link.tabIndex = 0;
@@ -302,7 +298,7 @@ export default () => {
   };
 
   var _addModalSection = function(modalLink) {
-    var section = debounce.createElement("section");
+    var section = d.createElement("section");
     section.id = modalName + "_" + modalLink.count;
     section.count = modalLink.count;
     section.returnId = modalLink.id;
@@ -322,13 +318,13 @@ export default () => {
     section.appendChild(_getModalDesc(modalLink));
     section.appendChild(_getModalCloseLink(modalLink));
 
-    debounce.body.appendChild(section);
+    d.body.appendChild(section);
   };
 
   var _addLightbox = function (modalLink) {
 
     var count = modalLink.count;
-    var lightboxDiv = debounce.createElement("div");
+    var lightboxDiv = d.createElement("div");
 
     lightboxDiv.id = modalName + "_" + count + "_" + lightboxClass;
     lightboxDiv.className = modalName + "_" + lightboxClass;
@@ -338,7 +334,7 @@ export default () => {
     // mouse / touch only
     lightboxDiv.addEventListener("click", _closeModal, false);
 
-    debounce.body.appendChild(lightboxDiv);
+    d.body.appendChild(lightboxDiv);
   };
 
   var configuration = function (cfg) {
@@ -356,7 +352,7 @@ export default () => {
     configuration(cfg);
 
     var modalSrc;
-    var dataModals = debounce.querySelectorAll("[data-" + modalName + "]");
+    var dataModals = d.querySelectorAll("[data-" + modalName + "]");
 
     if (dataModals) {
       var i = dataModals.length;
@@ -392,5 +388,4 @@ export default () => {
     openClass : "-open", // is default ("-" + modaName automatically prepended)
     lightboxClass : "lightbox" // is default (modaName + "_" automatically prepended)
   });
-
 };
