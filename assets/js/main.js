@@ -2,9 +2,6 @@
 const ScrollReveal = require('scrollreveal');
 const Swiper = require('swiper');
 
-// @see https://codepen.io/2kool2/pen/LZaXay
-import Modal from './modal';
-
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
@@ -197,26 +194,9 @@ dropdownList.addEventListener('click', (e) => {
 
   setDropdownProps(0, 0, 0);
 
-  // @see https://codepen.io/2kool2/pen/LZaXay
-  const newNode = document.createElement('button');
-
-  // Add class name and content
-  newNode.id = 'socialButton';
-  newNode.innerHTML = iconTemplate(clickedItemIcon) + '&nbsp;' + clickedItemText;
-  newNode.setAttribute('alt', clickedItemText);
-  newNode.setAttribute('data-modal', 'https://' + clickedItemText + '.com/' + profiles[clickedItemText]);
-  newNode.style.color = 'inherit';
-  newNode.style.display = 'none';
-
-  // Add/Replace the current node inner HTML with the new node
-  if (document.body.contains(document.getElementById('socialButton'))) {
-    document.getElementById('socialButton').outerHTML = newNode.outerHTML;
-  } else {
-    mainButton.parentNode.insertBefore(newNode, mainButton);
-  }
-  // @see https://codepen.io/2kool2/pen/LZaXay
-  Modal();
-  newNode.dispatchEvent(new Event('click'));
+  // @see https://stackoverflow.com/a/48075675
+  const win = window.open('https://' + clickedItemText + '.com/' + profiles[clickedItemText], '_blank');
+  win.focus();
 });
 
 dropdownList.addEventListener('mousemove', (e) => {
