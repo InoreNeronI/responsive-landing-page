@@ -1,4 +1,7 @@
 
+// @see https://codepen.io/2kool2/pen/LZaXay
+import('./modal');
+
 const ScrollReveal = require('scrollreveal');
 const Swiper = require('swiper');
 
@@ -115,7 +118,6 @@ const dropdownTitle = document.querySelector(".dropdown-title");
 const dropdownList = document.querySelector(".dropdown-list");
 const mainButton = document.querySelector(".main-button");
 const floatingIcon = document.querySelector(".floating-icon");
-const floatingText = document.querySelector(".text-truncate");
 
 const icons = {
   facebook: 'bx bxl-facebook',
@@ -192,9 +194,24 @@ dropdownList.addEventListener("click", (e) => {
 
   dropdownTitleIcon.innerHTML = iconTemplate(clickedItemIcon);
   dropdownTitle.innerHTML = clickedItemText;
+
   setDropdownProps(0, 0, 0);
 
-  //console.log(iconTemplate(clickedItemIcon), floatingText.innerText, 'https://' + clickedItemText + '.com/' + profiles[clickedItemText]);
+  // @see https://codepen.io/2kool2/pen/LZaXay
+  const newNode = document.createElement('button');
+
+  // Add class name and content
+  newNode.id = 'socialButton';
+  newNode.innerText = clickedItemText;
+  newNode.setAttribute('alt', clickedItemText);
+  newNode.setAttribute('data-modal', 'https://' + clickedItemText + '.com/' + profiles[clickedItemText]);
+  newNode.style.color = 'inherit';
+
+  // Replace the current node inner HTML with the new node
+  dropdownTitle.innerHTML = newNode.outerHTML;
+  document.getElementById('socialButton').addEventListener('load', (e) => {
+    e.target.dispatchEvent(new Event('click'));
+  });
 });
 
 dropdownList.addEventListener("mousemove", (e) => {
