@@ -1,6 +1,6 @@
 
 // @see https://codepen.io/2kool2/pen/LZaXay
-import('./modal');
+  import modal from './modal';
 
 const ScrollReveal = require('scrollreveal');
 const Swiper = require('swiper');
@@ -163,8 +163,10 @@ const renderListItems = () => {
     .join("");
 };
 
-window.addEventListener("load", () => {
-  renderListItems();
+window.addEventListener("load", async () => {
+  await renderListItems();
+  // @see https://codepen.io/2kool2/pen/LZaXay
+  await modal();
 });
 
 const setDropdownProps = (deg, ht, opacity) => {
