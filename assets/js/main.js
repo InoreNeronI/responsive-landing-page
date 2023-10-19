@@ -115,6 +115,7 @@ const dropdownTitle = document.querySelector(".dropdown-title");
 const dropdownList = document.querySelector(".dropdown-list");
 const mainButton = document.querySelector(".main-button");
 const floatingIcon = document.querySelector(".floating-icon");
+const floatingText = document.querySelector(".text-truncate");
 
 const icons = {
   facebook: 'bx bxl-facebook',
@@ -124,6 +125,16 @@ const icons = {
   tiktok: 'bx bxl-tiktok',
   twitter: 'bx bxl-twitter',
   youtube: 'bx bxl-youtube'
+};
+
+const profiles = {
+  facebook: 'profile.php?id=61551260452341',
+  instagram: 'r.ot.en',
+  linkedin: 'in/mmozos',
+  reddit: 'user/mmozos',
+  tiktok: '@r.ot.en',
+  twitter: 'martinmozos',
+  youtube: 'channel/UC9kA-C03KcBkibQ_FSoa09g'
 };
 
 const listItems = ["Facebook", "Instagram", "Linkedin", "Reddit", "TikTok", "Twitter", "Youtube"];
@@ -182,6 +193,8 @@ dropdownList.addEventListener("click", (e) => {
   dropdownTitleIcon.innerHTML = iconTemplate(clickedItemIcon);
   dropdownTitle.innerHTML = clickedItemText;
   setDropdownProps(0, 0, 0);
+
+  //console.log(iconTemplate(clickedItemIcon), floatingText.innerText, 'https://' + clickedItemText + '.com/' + profiles[clickedItemText]);
 });
 
 dropdownList.addEventListener("mousemove", (e) => {
@@ -195,3 +208,4 @@ dropdownList.addEventListener("mousemove", (e) => {
   root.style.setProperty("--floating-icon-left", x - iconSize / 2 + "px");
   root.style.setProperty("--floating-icon-top", y - iconSize / 2 + "px");
 });
+
