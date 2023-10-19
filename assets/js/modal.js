@@ -17,10 +17,10 @@ const Modal = () => ((window, debounce) => {
   // make lightbox the modal section and code around it?
   // perhaps <section class=modal = lightbox
   //            <div =modal_inner = modal?
-  // lightbox doesnt need to be in keychain just add onclick to close
+  // lightbox doesn't need to be in keychain just add onclick to close
 
   // To do:
-  //    Option to set an ideal pop-up size eg an image
+  //    Option to set an ideal pop-up size e.g. an image
   //      - maintain the aspect ratio
   //      - centre it
 
