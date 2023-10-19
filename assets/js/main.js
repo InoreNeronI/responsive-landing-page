@@ -118,6 +118,7 @@ const floatingIcon = document.querySelector('.floating-icon');
 
 const icons = {
   facebook: 'bx bxl-facebook',
+  github: 'bx bxl-github',
   instagram: 'bx bxl-instagram',
   linkedin: 'bx bxl-linkedin',
   reddit: 'bx bxl-reddit',
@@ -128,6 +129,7 @@ const icons = {
 
 const profiles = {
   facebook: 'profile.php?id=61551260452341',
+  github: 'InoreNeronI',
   instagram: 'r.ot.en',
   linkedin: 'in/mmozos',
   reddit: 'user/mmozos',
@@ -136,7 +138,7 @@ const profiles = {
   youtube: 'channel/UC9kA-C03KcBkibQ_FSoa09g'
 };
 
-const listItems = ['Facebook', 'Instagram', 'Linkedin', 'Reddit', 'TikTok', 'Twitter', 'Youtube'];
+const listItems = ['Facebook', 'GitHub', 'Instagram', 'Linkedin', 'Reddit', 'TikTok', 'Twitter', 'Youtube'];
 
 const iconTemplate = (icon) => {
   return `<i class="${icon}"></i>`;
