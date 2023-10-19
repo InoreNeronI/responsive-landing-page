@@ -1,6 +1,9 @@
 
-// @see https://codepen.io/2kool2/pen/LZaXay
-export const modal = (window, d, debounce) => {
+// @see https://web.archive.org/web/20221207055510/https://john-dugan.com/javascript-debounce
+// @see https://github.com/johndugan/javascript-debounce
+const debounce = function(e,t,n){var a;return function(){var r=this,i=arguments,o=function(){a=null,n||e.apply(r,i)},s=n&&!a;clearTimeout(a),a=setTimeout(o,t||200),s&&e.apply(r,i)}};
+
+const Modal = () => ((window, debounce) => {
 
   "use strict";
 
@@ -37,7 +40,7 @@ export const modal = (window, d, debounce) => {
   var modalDesc = "Tab or Shift + Tab to move focus.";
 
   var _setContentObjs = function (isModalOpen) {
-    var objs = d.getElementsByClassName("-" +modalName);
+    var objs = window.document.getElementsByClassName("-" +modalName);
     var i = objs.length;
     while (i--) {
       if (!!isModalOpen) {
@@ -55,16 +58,16 @@ export const modal = (window, d, debounce) => {
 
   var _closeModal = function (e) {
     var count = e.target.count; // = lightbox, modal (ESC key), close btn
-    var modalSection = d.getElementById(modalName + "_" + count);
-    var lightbox = d.getElementById(modalName + "_" + count + "_" + lightboxClass);
+    var modalSection = window.document.getElementById(modalName + "_" + count);
+    var lightbox = window.document.getElementById(modalName + "_" + count + "_" + lightboxClass);
     var modalLink;
     if (modalSection) {
       modalSection.setAttribute("aria-hidden", "true");
       lightbox.className = lightbox.className.replace(lightboxClass + "-on", "");
 
       _setContentObjs(!modalSection.getAttribute("aria-hidden"));
-      modalLink = d.getElementById(modalSection.returnId);
-      d.body.classList.remove(openClass);
+      modalLink = window.document.getElementById(modalSection.returnId);
+      window.document.body.classList.remove(openClass);
       modalLink.focus();
     }
   };
@@ -87,7 +90,7 @@ export const modal = (window, d, debounce) => {
     var iframes;
     var ii;
 
-    var modals = d.getElementsByClassName(modalName);
+    var modals = window.document.getElementsByClassName(modalName);
     var i = modals.length;
 
     while (i--) {
@@ -112,7 +115,7 @@ export const modal = (window, d, debounce) => {
     var iframe;
     if (!frames[0]) {
 
-      iframe = d.createElement("iframe");
+      iframe = window.document.createElement("iframe");
 
       // Don't display iframe until it's content is ready
       iframe.addEventListener("load", function () {
@@ -130,7 +133,7 @@ export const modal = (window, d, debounce) => {
       iframe.setAttribute("allowfullscreen", true);
 
       // Add iframe before the close button
-      close_lnk = d.getElementById(modalName + "_" + modalSection.count + "_lnk_close");
+      close_lnk = window.document.getElementById(modalName + "_" + modalSection.count + "_lnk_close");
       modalSection.insertBefore(iframe, close_lnk);
 
     }
@@ -159,8 +162,8 @@ export const modal = (window, d, debounce) => {
       var count = target.count;
       var tempId = modalName + "_" + count;
       var tempLightboxClass = modalName + "_" + lightboxClass;
-      var modalSection = d.getElementById(tempId);
-      var lightbox = d.getElementById(tempId + "_" + lightboxClass);
+      var modalSection = window.document.getElementById(tempId);
+      var lightbox = window.document.getElementById(tempId + "_" + lightboxClass);
 
       if (modalSection && lightbox) {
         if (!lightbox.className.match(tempLightboxClass + "-on")) {
@@ -171,8 +174,8 @@ export const modal = (window, d, debounce) => {
 
         _setContentObjs(!!modalSection.getAttribute("aria-hidden"));
 
-        d.body.classList.add(openClass);
-        d.getElementById(modalName + "_" + count + "_title").focus();
+        window.document.body.classList.add(openClass);
+        window.document.getElementById(modalName + "_" + count + "_title").focus();
       }
     }
   };
@@ -218,7 +221,7 @@ export const modal = (window, d, debounce) => {
       if (target.classList.contains(modalName + "_title")) {
         e.preventDefault();
         //focus on last object in modal (close btn)
-        d.getElementById(modalName + "_" + e.target.count + "_lnk_close").focus();
+        window.document.getElementById(modalName + "_" + e.target.count + "_lnk_close").focus();
       }
     }
 
@@ -227,7 +230,7 @@ export const modal = (window, d, debounce) => {
       if (target.classList.contains(modalName + "_lnk-close")) {
         e.preventDefault();
         //focus on first object in modal - or should it be the modal? Requires testing
-        d.getElementById(modalName + "_" + e.target.count + "_title").focus();
+        window.document.getElementById(modalName + "_" + e.target.count + "_title").focus();
       }
     }
 
@@ -250,7 +253,7 @@ export const modal = (window, d, debounce) => {
   };
 
   var _getModalTitle = function (modalLink) {
-    var title = d.createElement("h1");
+    var title = window.document.createElement("h1");
     title.id = modalName + "_" + modalLink.count + "_title";
     title.className = modalName + "_title";
     title.tabIndex = 0;
@@ -261,21 +264,21 @@ export const modal = (window, d, debounce) => {
   };
 
   var _getModalSVG = function (icon, clss, title) {
-    var svg = d.createElementNS("http://www.w3.org/2000/svg", "svg");
+    var svg = window.document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.classList.add(clss);
     if (title) {
-      var t = d.createElementNS("http://www.w3.org/2000/svg", "title");
+      var t = window.document.createElementNS("http://www.w3.org/2000/svg", "title");
       t.textContent = title;
       svg.appendChild(t);
     }
-    var use = d.createElementNS("http://www.w3.org/2000/svg", "use");
+    var use = window.document.createElementNS("http://www.w3.org/2000/svg", "use");
     use.setAttributeNS("http://www.w3.org/1999/xlink", "href", "#" + icon);
     svg.appendChild(use);
     return svg;
   };
 
   var _getModalDesc = function (modalLink) {
-    var desc = d.createElement("p");
+    var desc = window.document.createElement("p");
     desc.id = modalName + "_" + modalLink.count + "_desc";
     desc.className = modalName + "_desc";
     desc.tabIndex = 0;
@@ -286,7 +289,7 @@ export const modal = (window, d, debounce) => {
   };
 
   var _getModalCloseLink = function (modalLink) {
-    var link = d.createElement("a");
+    var link = window.document.createElement("a");
     link.id = modalName + "_" + modalLink.count + "_lnk_close";
     link.className = modalName + "_lnk-close";
     link.tabIndex = 0;
@@ -298,7 +301,7 @@ export const modal = (window, d, debounce) => {
   };
 
   var _addModalSection = function(modalLink) {
-    var section = d.createElement("section");
+    var section = window.document.createElement("section");
     section.id = modalName + "_" + modalLink.count;
     section.count = modalLink.count;
     section.returnId = modalLink.id;
@@ -318,13 +321,13 @@ export const modal = (window, d, debounce) => {
     section.appendChild(_getModalDesc(modalLink));
     section.appendChild(_getModalCloseLink(modalLink));
 
-    d.body.appendChild(section);
+    window.document.body.appendChild(section);
   };
 
   var _addLightbox = function (modalLink) {
 
     var count = modalLink.count;
-    var lightboxDiv = d.createElement("div");
+    var lightboxDiv = window.document.createElement("div");
 
     lightboxDiv.id = modalName + "_" + count + "_" + lightboxClass;
     lightboxDiv.className = modalName + "_" + lightboxClass;
@@ -334,7 +337,7 @@ export const modal = (window, d, debounce) => {
     // mouse / touch only
     lightboxDiv.addEventListener("click", _closeModal, false);
 
-    d.body.appendChild(lightboxDiv);
+    window.document.body.appendChild(lightboxDiv);
   };
 
   var configuration = function (cfg) {
@@ -352,7 +355,7 @@ export const modal = (window, d, debounce) => {
     configuration(cfg);
 
     var modalSrc;
-    var dataModals = d.querySelectorAll("[data-" + modalName + "]");
+    var dataModals = window.document.querySelectorAll("[data-" + modalName + "]");
 
     if (dataModals) {
       var i = dataModals.length;
@@ -388,4 +391,7 @@ export const modal = (window, d, debounce) => {
     openClass : "-open", // is default ("-" + modaName automatically prepended)
     lightboxClass : "lightbox" // is default (modaName + "_" automatically prepended)
   });
-};
+})(window, debounce);
+
+export default Modal;
+export { Modal };

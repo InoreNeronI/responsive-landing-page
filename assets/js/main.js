@@ -1,9 +1,9 @@
 
-// @see https://codepen.io/2kool2/pen/LZaXay
-import { modal } from './modal';
-
 const ScrollReveal = require('scrollreveal');
 const Swiper = require('swiper');
+
+// @see https://codepen.io/2kool2/pen/LZaXay
+import Modal from './modal';
 
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu');
@@ -113,11 +113,11 @@ sr.reveal(`.about__img, .discount__data`, {origin: 'right'});
 
 /*=============== SOCIAL FOOTER ===============*/ // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
 const root = document.documentElement;
-const dropdownTitleIcon = document.querySelector(".dropdown-title-icon");
-const dropdownTitle = document.querySelector(".dropdown-title");
-const dropdownList = document.querySelector(".dropdown-list");
-const mainButton = document.querySelector(".main-button");
-const floatingIcon = document.querySelector(".floating-icon");
+const dropdownTitleIcon = document.querySelector('.dropdown-title-icon');
+const dropdownTitle = document.querySelector('.dropdown-title');
+const dropdownList = document.querySelector('.dropdown-list');
+const mainButton = document.querySelector('.main-button');
+const floatingIcon = document.querySelector('.floating-icon');
 
 const icons = {
   facebook: 'bx bxl-facebook',
@@ -139,7 +139,7 @@ const profiles = {
   youtube: 'channel/UC9kA-C03KcBkibQ_FSoa09g'
 };
 
-const listItems = ["Facebook", "Instagram", "Linkedin", "Reddit", "TikTok", "Twitter", "Youtube"];
+const listItems = ['Facebook', 'Instagram', 'Linkedin', 'Reddit', 'TikTok', 'Twitter', 'Youtube'];
 
 const iconTemplate = (icon) => {
   return `<i class="${icon}"></i>`;
@@ -160,41 +160,35 @@ const renderListItems = () => {
     .map((item, index) => {
       return listItemTemplate(item, 100 * index);
     })
-    .join("");
+    .join('');
 };
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   renderListItems();
-  // @see https://web.archive.org/web/20221207055510/https://john-dugan.com/javascript-debounce
-  // @see https://github.com/johndugan/javascript-debounce
-  const debounce = function(e,t,n){var a;return function(){var r=this,i=arguments,o=function(){a=null,n||e.apply(r,i)},s=n&&!a;clearTimeout(a),a=setTimeout(o,t||200),s&&e.apply(r,i)}};
-
-  // @see https://codepen.io/2kool2/pen/LZaXay
-  modal(window, document, debounce);
 });
 
 const setDropdownProps = (deg, ht, opacity) => {
-  root.style.setProperty("--rotate-arrow", deg !== 0 ? deg + "deg" : 0);
-  root.style.setProperty("--dropdown-height", ht !== 0 ? ht + "rem" : 0);
-  root.style.setProperty("--list-opacity", opacity);
+  root.style.setProperty('--rotate-arrow', deg !== 0 ? deg + 'deg' : 0);
+  root.style.setProperty('--dropdown-height', ht !== 0 ? ht + 'rem' : 0);
+  root.style.setProperty('--list-opacity', opacity);
 };
 
-mainButton.addEventListener("click", () => {
+mainButton.addEventListener('click', () => {
   const listWrapperSizes = 3.5; // margins, paddings & borders
   const dropdownOpenHeight = 4.6 * listItems.length + listWrapperSizes;
   const currDropdownHeight =
-    root.style.getPropertyValue("--dropdown-height") || "0";
-  currDropdownHeight === "0"
+    root.style.getPropertyValue('--dropdown-height') || '0';
+  currDropdownHeight === '0'
     ? setDropdownProps(180, dropdownOpenHeight, 1)
     : setDropdownProps(0, 0, 0);
 });
 
-dropdownList.addEventListener("mouseover", (e) => {
+dropdownList.addEventListener('mouseover', (e) => {
   const translateValue = e.target.dataset.translateValue;
-  root.style.setProperty("--translate-value", translateValue);
+  root.style.setProperty('--translate-value', translateValue);
 });
 
-dropdownList.addEventListener("click", (e) => {
+dropdownList.addEventListener('click', (e) => {
   const clickedItemText = e.target.innerText.toLowerCase().trim();
   const clickedItemIcon = icons[clickedItemText];
 
@@ -208,27 +202,32 @@ dropdownList.addEventListener("click", (e) => {
 
   // Add class name and content
   newNode.id = 'socialButton';
-  newNode.innerText = clickedItemText;
+  newNode.innerHTML = iconTemplate(clickedItemIcon) + '&nbsp;' + clickedItemText;
   newNode.setAttribute('alt', clickedItemText);
   newNode.setAttribute('data-modal', 'https://' + clickedItemText + '.com/' + profiles[clickedItemText]);
   newNode.style.color = 'inherit';
+  newNode.style.display = 'none';
 
-  // Replace the current node inner HTML with the new node
-  dropdownTitle.innerHTML = newNode.outerHTML;
-  document.getElementById('socialButton').addEventListener('load', (e) => {
-    e.target.dispatchEvent(new Event('click'));
-  });
+  // Add/Replace the current node inner HTML with the new node
+  if (document.body.contains(document.getElementById('socialButton'))) {
+    document.getElementById('socialButton').outerHTML = newNode.outerHTML;
+  } else {
+    mainButton.parentNode.insertBefore(newNode, mainButton);
+  }
+  // @see https://codepen.io/2kool2/pen/LZaXay
+  Modal();
+  newNode.dispatchEvent(new Event('click'));
 });
 
-dropdownList.addEventListener("mousemove", (e) => {
-  const iconSize = root.style.getPropertyValue("--floating-icon-size") || 0;
+dropdownList.addEventListener('mousemove', (e) => {
+  const iconSize = root.style.getPropertyValue('--floating-icon-size') || 0;
   const x = e.clientX - dropdownList.getBoundingClientRect().x;
   const y = e.clientY - dropdownList.getBoundingClientRect().y;
   const targetText = e.target.innerText.toLowerCase().trim();
   const hoverItemText = icons[targetText];
 
   floatingIcon.innerHTML = iconTemplate(hoverItemText);
-  root.style.setProperty("--floating-icon-left", x - iconSize / 2 + "px");
-  root.style.setProperty("--floating-icon-top", y - iconSize / 2 + "px");
+  root.style.setProperty('--floating-icon-left', x - iconSize / 2 + 'px');
+  root.style.setProperty('--floating-icon-top', y - iconSize / 2 + 'px');
 });
 
