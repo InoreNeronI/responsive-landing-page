@@ -85,7 +85,7 @@ window.addEventListener('scroll', scrollActive);
 /*=============== SHOW SCROLL UP ===============*/
 function scrollUp() {
     const scrollUp = document.getElementById('scroll-up');
-    // When the scroll is higher than 460 viewport height, add the show-scroll class to the a tag with the scroll-top class
+    // When the scroll is higher than 460 viewport height, add the show-scroll class to the anchor tag with the scroll-top class
     if (this.scrollY >= 460) {
         scrollUp.classList.add('show-scroll');
     } else {
@@ -99,8 +99,8 @@ const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
     duration: 2500,
-    delay: 400,
-    // reset: true
+    delay: 400/*,
+    reset: true*/
 });
 
 sr.reveal(`.home-swiper, .new-swiper, .newsletter__container`);
@@ -108,8 +108,16 @@ sr.reveal(`.category__data, .trick__content, .footer__content`, {interval: 100})
 sr.reveal(`.about__data, .discount__img`, {origin: 'left'});
 sr.reveal(`.about__img, .discount__data`, {origin: 'right'});
 
-/*=============== SOCIAL FOOTER ===============*/ // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+/*=============== THEME SWITCHER ===============*/
 const root = document.documentElement;
+document.querySelector('.forest-switcher').addEventListener('click', () => root.className = 'forest');
+document.querySelector('.fire-switcher').addEventListener('click', () => root.className = 'fire');
+document.querySelector('.earth-switcher').addEventListener('click', () => root.className = 'earth');
+document.querySelector('.air-switcher').addEventListener('click', () => root.className = 'air');
+document.querySelector('.water-switcher').addEventListener('click', () => root.className = 'water');
+document.querySelector('.high-switcher').addEventListener('click', () => root.className = 'high');
+
+/*=============== SOCIAL FOOTER ===============*/ // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
 const dropdownTitleIcon = document.querySelector('.dropdown-title-icon');
 const dropdownTitle = document.querySelector('.dropdown-title');
 const dropdownList = document.querySelector('.dropdown-list');
@@ -122,6 +130,7 @@ const icons = {
   github: 'bx bxl-github',
   instagram: 'bx bxl-instagram',
   linkedin: 'bx bxl-linkedin',
+  mastodon: 'bx bxl-mastodon',
   reddit: 'bx bxl-reddit',
   spotify: 'bx bxl-spotify',
   tiktok: 'bx bxl-tiktok',
@@ -135,6 +144,7 @@ const profiles = {
   github: 'github.com/InoreNeronI',
   instagram: 'instagram.com/r.ot.en',
   linkedin: 'linkedin.com/in/mmozos',
+  mastodon: 'mastodon.eus/InoreNeronI',
   reddit: 'reddit.com/user/mmozos',
   spotify: 'open.spotify.com/user/paiton',
   tiktok: 'tiktok.com/@r.ot.en',
@@ -142,7 +152,7 @@ const profiles = {
   youtube: 'youtube.com/channel/UC9kA-C03KcBkibQ_FSoa09g'
 };
 
-const listItems = ['Amazon', 'Facebook', 'GitHub', 'Instagram', 'Linkedin', 'Reddit', 'Spotify', 'TikTok', 'Twitter', 'Youtube'];
+const listItems = ['Amazon', 'Facebook', 'GitHub', 'Instagram', 'Linkedin', 'Mastodon', 'Reddit', 'Spotify', 'TikTok', 'Twitter', 'Youtube'];
 
 const iconTemplate = (icon) => {
   return `<i class="${icon}"></i>`;

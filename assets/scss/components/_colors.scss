@@ -2,14 +2,16 @@
 @use 'sass:list';
 @use 'sass:map';
 
-// Define "4 Elements" color names and values
-$fire: ('dark': #835b49, 'light': #834949) !default;
-$earth: ('dark': #838149, 'light': #588349) !default;
-$air: ('dark': #131416, 'light': #fdbe00) !default;
-$water: ('dark': #000d2f, 'light': #68ceb5) !default;
+// Define "4 Elements" color names and values plus forest and high-contrast
+$forest: ('dark': #3e6b4f, 'light': #8fbf9f) !default;
+$fire: ('dark': #ff4500, 'light': #ff8c00) !default;
+$earth: ('dark': #ffc154, 'light': #f5d76e) !default;
+$air: ('dark': #00bcd4, 'light': #e0f2f1) !default;
+$water: ('dark': #0099cc, 'light': #66ccff) !default;
+$high: ('dark': #222, 'light': #fff) !default;
 
 // Get random color pair
-$color: list.nth(($fire, $earth, $air, $water), random(list.length(fire earth air water))) !default;
+//$color: list.nth(($forest, $fire, $earth, $air, $water, $high), random(list.length(forest fire earth air water high))) !default;
 
 // @see https://github.com/bedimcode/responsive-halloween-website/blob/main/assets/scss/config/_variables.scss
 :root {
@@ -28,8 +30,30 @@ $color: list.nth(($fire, $earth, $air, $water), random(list.length(fire earth ai
   --floating-icon-left: 0;
 
   /*========== Colors ==========*/
-  --color-dark: #{map.get($color, 'dark')};
-  --color-light: #{map.get($color, 'light')};
+  &.forest {
+    --color-dark: #{map.get($forest, 'dark')};
+    --color-light: #{map.get($forest, 'light')};
+  }
+  &.fire {
+    --color-dark: #{map.get($fire, 'dark')};
+    --color-light: #{map.get($fire, 'light')};
+  }
+  &.earth {
+    --color-dark: #{map.get($earth, 'dark')};
+    --color-light: #{map.get($earth, 'light')};
+  }
+  &.air {
+    --color-dark: #{map.get($air, 'dark')};
+    --color-light: #{map.get($air, 'light')};
+  }
+  &.water {
+    --color-dark: #{map.get($water, 'dark')};
+    --color-light: #{map.get($water, 'light')};
+  }
+  &.high {
+    --color-dark: #{map.get($high, 'dark')};
+    --color-light: #{map.get($high, 'light')};
+  }
   --primary-bg-color: var(--color-dark); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
   --primary-color: var(--color-light); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
   --button-hover-bg-color: var(--color-dark); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
@@ -37,11 +61,11 @@ $color: list.nth(($fire, $earth, $air, $water), random(list.length(fire earth ai
   --body-color: linear-gradient(90deg, var(--color-light) 0%, var(--color-dark) 100%);
   --container-color: linear-gradient(136deg, lighten(var(--color-light)) 0%, lighten(var(--color-dark)) 100%);
   --container-color-repeating: repeating-linear-gradient(
-    135deg, /* @see https://css-tricks.com/snippets/css/css-repeating-gradients */
-    var(--color-light),
-    var(--color-light) 10px,
-    var(--color-dark) 10px,
-    var(--color-dark) 20px /* determines size */
+                  135deg, /* @see https://css-tricks.com/snippets/css/css-repeating-gradients */
+                  var(--color-light),
+                  var(--color-light) 10px,
+                  var(--color-dark) 10px,
+                  var(--color-dark) 20px /* determines size */
   );
   --hue: 14;
   --first-color: hsl(var(--hue), 91%, 54%);
