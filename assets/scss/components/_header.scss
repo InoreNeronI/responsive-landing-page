@@ -80,11 +80,8 @@
         }
     }
     .color-switcher{
-        float: left;
-        width: 2rem;
-        height: 2rem;
-        border-radius: 2rem;
         border: 3px solid var(--text-color);
+        width: 1rem;
         &.forest-switcher{
             background-color: #3e6b4f;
         }

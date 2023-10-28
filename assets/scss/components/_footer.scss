@@ -3,6 +3,12 @@
     position: relative;
     overflow: hidden;
 
+    &__img-one,
+    &__img-two{
+        position: absolute;
+        transition: .3s;
+    }
+
     &__img-one{
         width: 100px;
         top: 6rem;
@@ -20,11 +26,6 @@
         &:hover{
             transform: translateY(-.5rem);
         }
-    }
-    &__img-one,
-    &__img-two{
-        position: absolute;
-        transition: .3s;
     }
 
     &__container{
@@ -51,7 +52,7 @@
     }
     &__social{
         display: flex;
-        column-gap: .75rem;
+        column-gap: .75rem;/*
 
         &-link{
             display: inline-flex;
@@ -64,7 +65,7 @@
             &:hover{
                 background: var(--body-color);
             }
-        }
+        }*/
 
         &-dropdown{ // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
             svg {
@@ -129,7 +130,7 @@
             }
 
             .main-button {
-                height: 4rem;
+                height: 2.8rem;
                 border-radius: var(--border-radius);
                 color: var(--text-color);
                 background-color: var(--primary-bg-color);
