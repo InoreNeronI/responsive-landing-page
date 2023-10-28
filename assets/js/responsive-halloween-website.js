@@ -117,28 +117,32 @@ const mainButton = document.querySelector('.main-button');
 const floatingIcon = document.querySelector('.floating-icon');
 
 const icons = {
+  amazon: 'bx bxl-amazon',
   facebook: 'bx bxl-facebook',
   github: 'bx bxl-github',
   instagram: 'bx bxl-instagram',
   linkedin: 'bx bxl-linkedin',
   reddit: 'bx bxl-reddit',
+  spotify: 'bx bxl-spotify',
   tiktok: 'bx bxl-tiktok',
   twitter: 'bx bxl-twitter',
   youtube: 'bx bxl-youtube'
 };
 
 const profiles = {
-  facebook: 'profile.php?id=61551260452341',
-  github: 'InoreNeronI',
-  instagram: 'r.ot.en',
-  linkedin: 'in/mmozos',
-  reddit: 'user/mmozos',
-  tiktok: '@r.ot.en',
-  twitter: 'martinmozos',
-  youtube: 'channel/UC9kA-C03KcBkibQ_FSoa09g'
+  amazon: 'amazon.es/gp/profile/amzn1.account.AHIQ2NJLBKF7CGRQPT7SHJ5WKWAQ',
+  facebook: 'facebook.com/profile.php?id=61551260452341',
+  github: 'github.com/InoreNeronI',
+  instagram: 'instagram.com/r.ot.en',
+  linkedin: 'linkedin.com/in/mmozos',
+  reddit: 'reddit.com/user/mmozos',
+  spotify: 'open.spotify.com/user/paiton',
+  tiktok: 'tiktok.com/@r.ot.en',
+  twitter: 'twitter.com/martinmozos',
+  youtube: 'youtube.com/channel/UC9kA-C03KcBkibQ_FSoa09g'
 };
 
-const listItems = ['Facebook', 'GitHub', 'Instagram', 'Linkedin', 'Reddit', 'TikTok', 'Twitter', 'Youtube'];
+const listItems = ['Amazon', 'Facebook', 'GitHub', 'Instagram', 'Linkedin', 'Reddit', 'Spotify', 'TikTok', 'Twitter', 'Youtube'];
 
 const iconTemplate = (icon) => {
   return `<i class="${icon}"></i>`;
@@ -148,7 +152,7 @@ const listItemTemplate = (text, translateValue) => {
   return `
     <li class="dropdown-list-item">
       <button class="dropdown-button list-button" data-translate-value="${translateValue}%">
-        <span class="text-truncate">${text}</span>
+        <span class="text-truncate">${text}&nbsp;${iconTemplate(icons[text.toLowerCase()])}</span>
       </button>
     </li>
   `;
@@ -197,7 +201,7 @@ dropdownList.addEventListener('click', (e) => {
   setDropdownProps(0, 0, 0);
 
   // @see https://stackoverflow.com/a/48075675
-  const win = window.open('https://' + clickedItemText + '.com/' + profiles[clickedItemText], '_blank');
+  const win = window.open('https://' + profiles[clickedItemText], '_blank');
   win.focus();
 });
 
