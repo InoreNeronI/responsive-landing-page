@@ -144,7 +144,7 @@ const profiles = {
   github: 'github.com/InoreNeronI',
   instagram: 'instagram.com/r.ot.en',
   linkedin: 'linkedin.com/in/mmozos',
-  mastodon: 'mastodon.eus/InoreNeronI',
+  mastodon: 'mastodon.eus/@InoreNeronI',
   reddit: 'reddit.com/user/mmozos',
   spotify: 'open.spotify.com/user/paiton',
   tiktok: 'tiktok.com/@r.ot.en',
