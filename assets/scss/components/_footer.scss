@@ -1,58 +1,58 @@
 /*=============== FOOTER ===============*/
 .footer{
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
-    &__img-one,
-    &__img-two{
-        position: absolute;
-        transition: .3s;
-    }
+  &__img-one,
+  &__img-two{
+    position: absolute;
+    transition: .3s;
+  }
 
-    &__img-one{
-        width: 100px;
-        top: 6rem;
-        right: -2rem;
+  &__img-one{
+    width: 100px;
+    top: 6rem;
+    right: -2rem;
 
-        &:hover{
-            transform: translateY(-.5rem);
-        }
+    &:hover{
+      transform: translateY(-.5rem);
     }
-    &__img-two{
-        width: 150px;
-        bottom: 4rem;
-        right: 4rem;
+  }
+  &__img-two{
+    width: 150px;
+    bottom: 4rem;
+    right: 4rem;
 
-        &:hover{
-            transform: translateY(-.5rem);
-        }
+    &:hover{
+      transform: translateY(-.5rem);
     }
+  }
 
-    &__container{
-        align-items: end;
-        row-gap: 2rem;
-    }
-    &__content{
-        text-align: center;
-    }
-    &__logo{
-        display: flex;
-        align-items: center;
-        column-gap: .5rem;
-        margin-bottom: var(--mb-1);
-        font-weight: var(--font-medium);
-        color: var(--title-color);
+  &__container{
+    align-items: end;
+    row-gap: 2rem;
+  }
+  &__content{
+    text-align: center;
+  }
+  &__logo{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    margin-bottom: var(--mb-1);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
 
-        &-img{
-            width: 20px;
-        }
+    &-img{
+      width: 20px;
     }
-    &__description{
-        margin-bottom: var(--mb-1);
-    }
-    &__social{
-        display: flex;
-        column-gap: .75rem;/*
+  }
+  &__description{
+    margin-bottom: var(--mb-1);
+  }
+  &__social{
+    display: flex;
+    column-gap: .75rem;/*
 
         &-link{
             display: inline-flex;
@@ -67,192 +67,192 @@
             }
         }*/
 
-        &-dropdown{ // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
-            svg {
-                height: 1.6rem;
-                width: 1.6rem;
-            }
+    &-dropdown{ // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+      svg {
+        height: 1.6rem;
+        width: 1.6rem;
+      }
 
-            .text-truncate {
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-            }
+      .text-truncate {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
 
-            .dropdown-container {
-                margin-top: 30vh;
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                max-width: 34rem;
-            }
+      .dropdown-container {
+        margin-top: 30vh;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 34rem;
+      }
 
-            .dropdown-title-icon,
-            .dropdown-arrow {
-                display: inline-flex;
-            }
+      .dropdown-title-icon,
+      .dropdown-arrow {
+        display: inline-flex;
+      }
 
-            .dropdown-title {
-                margin: 0 auto 0 .8rem;
-                text-transform: capitalize;
-            }
+      .dropdown-title {
+        margin: 0 auto 0 .8rem;
+        text-transform: capitalize;
+      }
 
-            .dropdown-button {
-                display: flex;
-                align-items: center;
-                padding: 0 .8rem;
+      .dropdown-button {
+        display: flex;
+        align-items: center;
+        padding: 0 .8rem;
 
-                &:hover,
-                &:focus {
-                    color: var(--text-active);
-                    svg {
-                        fill: var(--text-active);
-                    }
-                }
-
-                svg {
-                    fill: var(--text-color);
-                    margin-right: .8rem;
-                    transition: all var(--transition-time) var(--transition-timing);
-                }
-
-                span {
-                    margin: 0 auto;
-                    i {
-                        margin-right: .8rem;
-                    }
-                }
-
-                svg,
-                span {
-                    pointer-events: none;
-                }
-            }
-
-            .main-button {
-                height: 2.8rem;
-                border-radius: var(--border-radius);
-                color: var(--text-color);
-                background-color: var(--primary-bg-color);
-                border: 0.1rem solid var(--border-color);
-                transition: all var(--transition-time) var(--transition-timing);
-
-                &:focus {
-                    border: 0.1rem solid var(--primary-color);
-                    box-shadow: 0 0 0 0.2rem rgba(44, 98, 246, 0.4);
-                }
-
-                .dropdown-arrow {
-                    transition: transform var(--transition-time) var(--transition-timing);
-                    transform: rotate(var(--rotate-arrow));
-                    margin-left: .8rem;
-                }
-            }
-
-            .list-button {
-                height: var(--list-button-height);
-                transition: color var(--transition-time) var(--transition-timing);
-                color: var(--text-color);
-                overflow: hidden;
-                cursor: none;
-            }
-
-            .dropdown-list-container {
-                overflow: hidden;
-                max-height: var(--dropdown-height);
-                transition: max-height var(--transition-time) var(--transition-timing);
-            }
-
-            .dropdown-list-wrapper {
-                margin-top: 1rem;
-                padding: 1rem;
-                background-color: var(--primary-bg-color);
-                border-radius: var(--border-radius);
-                border: 0.1rem solid var(--border-color);
-                position: relative;
-            }
-
-            ul.dropdown-list {
-                position: relative;
-                list-style-type: none;
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    left: 0;
-                    z-index: 0;
-                    opacity: 0;
-                    height: var(--list-button-height);
-                    background-color: var(--button-hover-bg-color);
-                    transition: all var(--transition-time) linear;
-                    transform: translateY(var(--translate-value));
-                    border-radius: var(--border-radius);
-                    pointer-events: none;
-                }
-
-                &:hover::before,
-                &:hover ~ .floating-icon {
-                    opacity: 1;
-                }
-            }
-
-            li.dropdown-list-item {
-                display: flex;
-                flex-direction: column;
-                position: relative;
-                z-index: 1;
-                opacity: var(--list-opacity);
-                transition: opacity 0.8s var(--transition-timing);
-            }
-
-            .floating-icon {
-                height: calc(var(--floating-icon-size) * 1px);
-                width: calc(var(--floating-icon-size) * 1px);
-                position: absolute;
-                top: var(--floating-icon-top);
-                left: var(--floating-icon-left);
-                background-color: var(--border-color);
-                border-radius: 1rem;
-                pointer-events: none;
-                opacity: 0;
-                transition: opacity var(--transition-time) var(--transition-timing);
-                z-index: 2;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                svg {
-                    fill: var(--text-active);
-                }
-            }
+        &:hover,
+        &:focus {
+          color: var(--text-active);
+          svg {
+            fill: var(--text-active);
+          }
         }
-    }
 
-    &__title{
-        font-size: var(--h3-font-size);
-        margin-bottom: var(--mb-1);
-    }
+        svg {
+          fill: var(--text-color);
+          margin-right: .8rem;
+          transition: all var(--transition-time) var(--transition-timing);
+        }
 
-    &__links{
-        display: grid;
-        row-gap: .35rem;
-    }
+        span {
+          margin: 0 auto;
+          i {
+            margin-right: .8rem;
+          }
+        }
 
-    &__link{
-        font-size: var(--small-font-size);
+        svg,
+        span {
+          pointer-events: none;
+        }
+      }
+
+      .main-button {
+        height: 2.8rem;
+        border-radius: var(--border-radius);
         color: var(--text-color);
-        transition: .3s;
+        background-color: var(--primary-bg-color);
+        border: 0.1rem solid var(--border-color);
+        transition: all var(--transition-time) var(--transition-timing);
 
-        &:hover{
-            color: var(--title-color);
+        &:focus {
+          border: 0.1rem solid var(--primary-color);
+          box-shadow: 0 0 0 0.2rem rgba(44, 98, 246, 0.4);
         }
-    }
 
-    &__copy{
-        display: block;
-        text-align: center;
-        font-size: var(--smaller-font-size);
-        margin-top: 4.5rem;
+        .dropdown-arrow {
+          transition: transform var(--transition-time) var(--transition-timing);
+          transform: rotate(var(--rotate-arrow));
+          margin-left: .8rem;
+        }
+      }
+
+      .list-button {
+        height: var(--list-button-height);
+        transition: color var(--transition-time) var(--transition-timing);
+        color: var(--text-color);
+        overflow: hidden;
+        cursor: none;
+      }
+
+      .dropdown-list-container {
+        overflow: hidden;
+        max-height: var(--dropdown-height);
+        transition: max-height var(--transition-time) var(--transition-timing);
+      }
+
+      .dropdown-list-wrapper {
+        margin-top: 1rem;
+        padding: 1rem;
+        background-color: var(--primary-bg-color);
+        border-radius: var(--border-radius);
+        border: 0.1rem solid var(--border-color);
+        position: relative;
+      }
+
+      ul.dropdown-list {
+        position: relative;
+        list-style-type: none;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          z-index: 0;
+          opacity: 0;
+          height: var(--list-button-height);
+          background-color: var(--button-hover-bg-color);
+          transition: all var(--transition-time) linear;
+          transform: translateY(var(--translate-value));
+          border-radius: var(--border-radius);
+          pointer-events: none;
+        }
+
+        &:hover::before,
+        &:hover ~ .floating-icon {
+          opacity: 1;
+        }
+      }
+
+      li.dropdown-list-item {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+        opacity: var(--list-opacity);
+        transition: opacity 0.8s var(--transition-timing);
+      }
+
+      .floating-icon {
+        height: calc(var(--floating-icon-size) * 1px);
+        width: calc(var(--floating-icon-size) * 1px);
+        position: absolute;
+        top: var(--floating-icon-top);
+        left: var(--floating-icon-left);
+        background-color: var(--border-color);
+        border-radius: 1rem;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity var(--transition-time) var(--transition-timing);
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          fill: var(--text-active);
+        }
+      }
     }
+  }
+
+  &__title{
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-1);
+  }
+
+  &__links{
+    display: grid;
+    row-gap: .35rem;
+  }
+
+  &__link{
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+    transition: .3s;
+
+    &:hover{
+      color: var(--title-color);
+    }
+  }
+
+  &__copy{
+    display: block;
+    text-align: center;
+    font-size: var(--smaller-font-size);
+    margin-top: 4.5rem;
+  }
 }

@@ -61,11 +61,11 @@ $high: ('dark': #222, 'light': #fff) !default;
   --body-color: linear-gradient(90deg, var(--color-light) 0%, var(--color-dark) 100%);
   --container-color: linear-gradient(136deg, lighten(var(--color-light)) 0%, lighten(var(--color-dark)) 100%);
   --container-color-repeating: repeating-linear-gradient(
-                  135deg, /* @see https://css-tricks.com/snippets/css/css-repeating-gradients */
-                  var(--color-light),
-                  var(--color-light) 10px,
-                  var(--color-dark) 10px,
-                  var(--color-dark) 20px /* determines size */
+      135deg, /* @see https://css-tricks.com/snippets/css/css-repeating-gradients */
+      var(--color-light),
+      var(--color-light) 10px,
+      var(--color-dark) 10px,
+      var(--color-dark) 20px /* determines size */
   );
   --hue: 14;
   --first-color: hsl(var(--hue), 91%, 54%);
