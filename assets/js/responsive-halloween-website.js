@@ -133,6 +133,7 @@ const icons = {
   mastodon: 'bx bxl-mastodon',
   reddit: 'bx bxl-reddit',
   spotify: 'bx bxl-spotify',
+  stackoverflow: 'bx bxl-stack-overflow',
   tiktok: 'bx bxl-tiktok',
   twitter: 'bx bxl-twitter',
   youtube: 'bx bxl-youtube'
@@ -147,12 +148,13 @@ const profiles = {
   mastodon: 'mastodon.eus/@InoreNeronI',
   reddit: 'reddit.com/user/mmozos',
   spotify: 'open.spotify.com/user/paiton',
+  stackoverflow: 'stackoverflow.com/users/16711967/burukinder-pantxineto',
   tiktok: 'tiktok.com/@r.ot.en',
   twitter: 'twitter.com/martinmozos',
   youtube: 'youtube.com/channel/UC9kA-C03KcBkibQ_FSoa09g'
 };
 
-const listItems = ['Amazon', 'Facebook', 'GitHub', 'Instagram', 'Linkedin', 'Mastodon', 'Reddit', 'Spotify', 'TikTok', 'Twitter', 'Youtube'];
+const listItems = ['Amazon', 'Facebook', 'GitHub', 'Instagram', 'Linkedin', 'Mastodon', 'Reddit', 'Spotify', 'StackOverflow', 'TikTok', 'Twitter', 'Youtube'];
 
 const iconTemplate = (icon) => {
   return `<i class="${icon}"></i>`;
