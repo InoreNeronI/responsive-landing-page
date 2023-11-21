@@ -153,7 +153,7 @@ const profiles = {
   steam: 'steamcommunity.com/id/grafilango',
   tiktok: 'tiktok.com/@r.ot.en',
   twitter: 'twitter.com/martinmozos',
-  youtube: 'youtube.com/channel/UC9kA-C03KcBkibQ_FSoa09g'
+  youtube: 'youtube.com/@euskalirria'
 };
 
 const listItems = ['Amazon', 'Facebook', 'GitHub', 'Instagram', 'Linkedin', 'Mastodon', 'Reddit', 'Spotify', 'StackOverflow', 'Steam', 'TikTok', 'Twitter', 'Youtube'];
