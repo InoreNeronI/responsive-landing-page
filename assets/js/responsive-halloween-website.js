@@ -156,7 +156,7 @@ const profiles = {
   youtube: 'youtube.com/@euskalirria'
 };
 
-const listItems = ['Amazon', 'Facebook', 'GitHub', 'Instagram', 'Linkedin', 'Mastodon', 'Reddit', 'Spotify', 'StackOverflow', 'Steam', 'TikTok', 'Twitter', 'Youtube'];
+const listItems = ['Amazon', 'Facebook', 'GitHub', 'Instagram', 'Linkedin', 'Mastodon', 'Reddit', 'Spotify', 'StackOverflow', 'Steam', 'TikTok', 'Twitter', 'YouTube'];
 
 const iconTemplate = (icon) => {
   return `<i class="${icon}"></i>`;
