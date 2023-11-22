@@ -1,18 +1,18 @@
 /*=============== HOME ===============*/
-.home{
-  &__content{
+.home {
+  &__content {
     row-gap: 1rem;
   }
-  &__group{
+  &__group {
     display: grid;
     position: relative;
     padding-top: 2rem;
   }
-  &__img{
+  &__img {
     height: 250px;
     justify-self: center;
   }
-  &__indicator{
+  &__indicator {
     width: 8px;
     height: 8px;
     background-color: var(--title-color);
@@ -21,7 +21,7 @@
     top: 7rem;
     right: 2rem;
 
-    &::after{
+    &::after {
       content: '';
       position: absolute;
       width: 1px;
@@ -31,56 +31,57 @@
       right: 45%;
     }
   }
-  &__details{
-    &-img{
+  &__details {
+    &-img {
       position: absolute;
-      right: .5rem;
+      right: 0.5rem;
     }
     &-title,
-    &-subtitle{
+    &-subtitle {
       display: block;
       font-size: var(--small-font-size);
       text-align: right;
     }
   }
-  &__subtitle{
+  &__subtitle {
     font-size: var(--h3-font-size);
     text-transform: uppercase;
     margin-bottom: var(--mb-1);
   }
-  &__title{
+  &__title {
     font-size: var(--biggest-font-size);
     font-weight: var(--font-black);
     line-height: 109%;
     margin-bottom: var(--mb-1);
   }
-  &__description{
+  &__description {
     margin-bottom: var(--mb-1);
   }
-  &__buttons{
+  &__buttons {
     display: flex;
     justify-content: space-between;
   }
 }
 
 /* Swiper Class */
-.swiper-pagination{
+.swiper-pagination {
   position: initial;
   margin-top: 1rem;
 }
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
   width: 5px;
   height: 5px;
   background-color: var(--title-color);
   opacity: 1;
 }
 
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
-  margin: 0 .5rem;
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0 0.5rem;
 }
 
-.swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active {
   width: 1.5rem;
   height: 5px;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }

@@ -1,14 +1,31 @@
-
 @use 'sass:list';
 @use 'sass:map';
 
 // Define "4 Elements" color names and values plus forest and high-contrast
-$forest: ('dark': #3e6b4f, 'light': #8fbf9f) !default;
-$fire: ('dark': #ff4500, 'light': #ff8c00) !default;
-$earth: ('dark': #ffc154, 'light': #f5d76e) !default;
-$air: ('dark': #00bcd4, 'light': #e0f2f1) !default;
-$water: ('dark': #0099cc, 'light': #66ccff) !default;
-$high: ('dark': #222, 'light': #fff) !default;
+$forest: (
+  'dark': #3e6b4f,
+  'light': #8fbf9f,
+) !default;
+$fire: (
+  'dark': #ff4500,
+  'light': #ff8c00,
+) !default;
+$earth: (
+  'dark': #ffc154,
+  'light': #f5d76e,
+) !default;
+$air: (
+  'dark': #00bcd4,
+  'light': #e0f2f1,
+) !default;
+$water: (
+  'dark': #0099cc,
+  'light': #66ccff,
+) !default;
+$high: (
+  'dark': #222,
+  'light': #fff,
+) !default;
 
 // Get random color pair
 //$color: list.nth(($forest, $fire, $earth, $air, $water, $high), random(list.length(forest fire earth air water high))) !default;
@@ -54,18 +71,35 @@ $high: ('dark': #222, 'light': #fff) !default;
     --color-dark: #{map.get($high, 'dark')};
     --color-light: #{map.get($high, 'light')};
   }
-  --primary-bg-color: var(--color-dark); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
-  --primary-color: var(--color-light); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
-  --button-hover-bg-color: var(--color-dark); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
-  --border-color: var(--color-light); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
-  --body-color: linear-gradient(90deg, var(--color-light) 0%, var(--color-dark) 100%);
-  --container-color: linear-gradient(136deg, lighten(var(--color-light)) 0%, lighten(var(--color-dark)) 100%);
+  --primary-bg-color: var(
+    --color-dark
+  ); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --primary-color: var(
+    --color-light
+  ); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --button-hover-bg-color: var(
+    --color-dark
+  ); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --border-color: var(
+    --color-light
+  ); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --body-color: linear-gradient(
+    90deg,
+    var(--color-light) 0%,
+    var(--color-dark) 100%
+  );
+  --container-color: linear-gradient(
+    136deg,
+    lighten(var(--color-light)) 0%,
+    lighten(var(--color-dark)) 100%
+  );
   --container-color-repeating: repeating-linear-gradient(
-      135deg, /* @see https://css-tricks.com/snippets/css/css-repeating-gradients */
+    135deg,
+    /* @see https://css-tricks.com/snippets/css/css-repeating-gradients */
       var(--color-light),
-      var(--color-light) 10px,
-      var(--color-dark) 10px,
-      var(--color-dark) 20px /* determines size */
+    var(--color-light) 10px,
+    var(--color-dark) 10px,
+    var(--color-dark) 20px /* determines size */
   );
   --hue: 14;
   --first-color: hsl(var(--hue), 91%, 54%);
@@ -73,7 +107,9 @@ $high: ('dark': #222, 'light': #fff) !default;
   --title-color: hsl(var(--hue), 4%, 100%);
   --text-color: hsl(var(--hue), 4%, 85%);
   --text-color-light: hsl(var(--hue), 4%, 55%);
-  --text-active: var(--text-color); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --text-active: var(
+    --text-color
+  ); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
 
   /*========== Font and typography ==========*/
   --body-font: #{$font-family};
@@ -81,9 +117,9 @@ $high: ('dark': #222, 'light': #fff) !default;
   --h1-font-size: 1.75rem;
   --h2-font-size: 1.3333rem;
   --h3-font-size: #{$font-size};
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
 
   // Responsive typography
   @media screen and (min-width: 992px) {
@@ -92,8 +128,8 @@ $high: ('dark': #222, 'light': #fff) !default;
     --h2-font-size: 1.75rem;
     --h3-font-size: 1.3333rem;
     --normal-font-size: #{$font-size};
-    --small-font-size: .938rem;
-    --smaller-font-size: .813rem;
+    --small-font-size: 0.938rem;
+    --smaller-font-size: 0.813rem;
   }
 
   /*========== Font weight ==========*/
@@ -102,9 +138,9 @@ $high: ('dark': #222, 'light': #fff) !default;
   --font-black: #{$font-weight};
 
   /*========== Margin bottom ==========*/
-  --mb-0-25: .25rem;
-  --mb-0-5: .5rem;
-  --mb-0-75: .75rem;
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
   --mb-1: 1rem;
   --mb-1-5: 1.5rem;
   --mb-2: 2rem;

@@ -1,52 +1,102 @@
 <!doctype html>
 <html class="high" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Responsive Website</title>
     <block name="styles">
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
-        <!--=============== BOXICONS ===============-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/animations.min.css" integrity="sha512-GKHaATMc7acW6/GDGVyBhKV3rST+5rMjokVip0uTikmZHhdqFWC7fGBaq6+lf+DOS5BIO8eK6NcyBYUBCHUBXA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" integrity="sha512-cn16Qw8mzTBKpu08X0fwhTSv02kK/FojjNLz0bwp2xJ4H+yalwzXKFw/5cLzuBZCxGWIA+95X4skzvo8STNtSg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/transformations.min.css" integrity="sha512-3eAliSizXMyTrrFHE6iSd+0drQt0aiNGVQNomFeXKtLHzPXWeSVAqzJbo/gNGkcPSYBQrghAACUNR7Pn2j0Fcw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!--=============== SWIPER CSS ===============-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.4/swiper-bundle.min.css" integrity="sha512-1CRCT9P70z3SktzqL7P8o8YvlmT1nXwFeXLBuVBa4mzQJ4fsvpmsObWooerRi4WzQT8QFrBVz/36mt/XGPYVzw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="../scss/responsive-halloween-website.scss">
+      <!--=============== FAVICON ===============-->
+      <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+      <!--=============== BOXICONS ===============-->
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/animations.min.css"
+        integrity="sha512-GKHaATMc7acW6/GDGVyBhKV3rST+5rMjokVip0uTikmZHhdqFWC7fGBaq6+lf+DOS5BIO8eK6NcyBYUBCHUBXA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css"
+        integrity="sha512-cn16Qw8mzTBKpu08X0fwhTSv02kK/FojjNLz0bwp2xJ4H+yalwzXKFw/5cLzuBZCxGWIA+95X4skzvo8STNtSg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/transformations.min.css"
+        integrity="sha512-3eAliSizXMyTrrFHE6iSd+0drQt0aiNGVQNomFeXKtLHzPXWeSVAqzJbo/gNGkcPSYBQrghAACUNR7Pn2j0Fcw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <!--=============== SWIPER CSS ===============-->
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.4/swiper-bundle.min.css"
+        integrity="sha512-1CRCT9P70z3SktzqL7P8o8YvlmT1nXwFeXLBuVBa4mzQJ4fsvpmsObWooerRi4WzQT8QFrBVz/36mt/XGPYVzw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="../scss/responsive-halloween-website.scss" />
     </block>
-</head>
-<body>
-<block name="body">
-    <!--==================== HEADER ====================-->
-    <header class="header" id="header">
-        <block name="header"><include src="partial/header.html"></include></block>
-    </header>
-    <!--==================== MAIN ====================-->
-    <main class="main">
-        <block name="content"><include src="partial/content.html"></include></block>
-    </main>
-    <!--==================== FOOTER ====================-->
-    <footer class="footer section">
-        <block name="footer"><include src="partial/footer.html"></include></block>
-    </footer>
-    <!--=============== SCROLL UP ===============-->
-    <a href="#" class="scrollup" id="scroll-up">
+  </head>
+  <body>
+    <block name="body">
+      <!--==================== HEADER ====================-->
+      <header class="header" id="header">
+        <block name="header"
+          ><include src="partial/header.html"></include
+        ></block>
+      </header>
+      <!--==================== MAIN ====================-->
+      <main class="main">
+        <block name="content"
+          ><include src="partial/content.html"></include
+        ></block>
+      </main>
+      <!--==================== FOOTER ====================-->
+      <footer class="footer section">
+        <block name="footer"
+          ><include src="partial/footer.html"></include
+        ></block>
+      </footer>
+      <!--=============== SCROLL UP ===============-->
+      <a href="#" class="scrollup" id="scroll-up">
         <i class="bx bx-up-arrow-alt scrollup__icon"></i>
-    </a>
-</block>
-<block name="scripts">
-    <!--=============== BOXICONS ===============-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/dist/boxicons.min.js" integrity="sha512-VTptlAlSWKaYE3DbrmwNYTzZg1zO6CtoGxplxlHxObgfLiCcRYDBqzTUWE/0ANUmyfYR7R227ZirV/I4rQsPNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!--=============== SCROLL REVEAL ===============-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js" integrity="sha512-Kr+RPfLjQ71E0cJ9nseJ6jwTrnmMnuSPnnsVQQ/ZYYCjOHKfJcWj8ILICXnvf9A7ZQChNzIbr9x/ZAxA6xAZlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!--=============== SWIPER JS ===============-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.4/swiper-bundle.min.js" integrity="sha512-/LKHQ9K9yatyOfEKXiysc9SPCpF6xkvfHQxtPkhdKS83GvfyIWDwKaOr3/LqVxbEX89Bqz+SbMHEPWm0AeRWnA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!--=============== MAIN JS ===============-->
-    <script src="../js/responsive-halloween-website.js" type="module"></script>
-</block>
-</body>
+      </a>
+    </block>
+    <block name="scripts">
+      <!--=============== BOXICONS ===============-->
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/dist/boxicons.min.js"
+        integrity="sha512-VTptlAlSWKaYE3DbrmwNYTzZg1zO6CtoGxplxlHxObgfLiCcRYDBqzTUWE/0ANUmyfYR7R227ZirV/I4rQsPNA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <!--=============== SCROLL REVEAL ===============-->
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"
+        integrity="sha512-Kr+RPfLjQ71E0cJ9nseJ6jwTrnmMnuSPnnsVQQ/ZYYCjOHKfJcWj8ILICXnvf9A7ZQChNzIbr9x/ZAxA6xAZlQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <!--=============== SWIPER JS ===============-->
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.4/swiper-bundle.min.js"
+        integrity="sha512-/LKHQ9K9yatyOfEKXiysc9SPCpF6xkvfHQxtPkhdKS83GvfyIWDwKaOr3/LqVxbEX89Bqz+SbMHEPWm0AeRWnA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <!--=============== MAIN JS ===============-->
+      <script
+        src="../js/responsive-halloween-website.js"
+        type="module"
+      ></script>
+    </block>
+  </body>
 </html>

@@ -1,19 +1,19 @@
 /*=============== DISCOUNT ===============*/
-.discount{
-  &__container{
+.discount {
+  &__container {
     background: var(--container-color);
     border-radius: 1rem;
     padding: 2.5rem 0 1.5rem;
-    row-gap: .75rem;
+    row-gap: 0.75rem;
   }
-  &__data{
+  &__data {
     text-align: center;
   }
-  &__title{
+  &__title {
     font-size: var(--h2-font-size);
     margin-bottom: var(--mb-2);
   }
-  &__img{
+  &__img {
     width: 200px;
     justify-self: center;
   }

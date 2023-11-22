@@ -1,4 +1,3 @@
-
 const ScrollReveal = require('scrollreveal');
 const Swiper = require('swiper');
 
@@ -16,7 +15,9 @@ if (navToggle) {
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
 if (navClose) {
-  navClose.addEventListener('click', () => navMenu.classList.remove('show-menu'));
+  navClose.addEventListener('click', () =>
+    navMenu.classList.remove('show-menu')
+  );
 }
 
 /*=============== REMOVE MENU MOBILE ===============*/
@@ -30,17 +31,17 @@ function linkAction() {
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
 /*=============== HOME SWIPER ===============*/
-/*let homeSwiper = */new Swiper('.home-swiper', {
+/*let homeSwiper = */ new Swiper('.home-swiper', {
   autoplay: {
-    delay: 4000
+    delay: 4000,
   },
   loop: 'true',
   pagination: {
     el: '.swiper-pagination',
-    clickable: true
+    clickable: true,
   },
-  spaceBetween: 30
-})
+  spaceBetween: 30,
+});
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 function scrollHeader() {
@@ -55,11 +56,11 @@ function scrollHeader() {
 window.addEventListener('scroll', scrollHeader);
 
 /*=============== NEW SWIPER ===============*/
-/*let newSwiper = */new Swiper('.new-swiper', {
+/*let newSwiper = */ new Swiper('.new-swiper', {
   centeredSlides: true,
   slidesPerView: 'auto',
   loop: 'true',
-  spaceBetween: 16
+  spaceBetween: 16,
 });
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
@@ -74,11 +75,15 @@ function scrollActive() {
     const sectionId = current.getAttribute('id');
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link');
+      document
+        .querySelector('.nav__menu a[href*=' + sectionId + ']')
+        .classList.add('active-link');
     } else {
-      document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link');
+      document
+        .querySelector('.nav__menu a[href*=' + sectionId + ']')
+        .classList.remove('active-link');
     }
-  })
+  });
 }
 window.addEventListener('scroll', scrollActive);
 
@@ -99,23 +104,37 @@ const sr = ScrollReveal({
   origin: 'top',
   distance: '60px',
   duration: 2500,
-  delay: 400/*,
-  reset: true*/
+  delay: 400 /*,
+  reset: true*/,
 });
 
 sr.reveal(`.home-swiper, .new-swiper, .newsletter__container`);
-sr.reveal(`.category__data, .trick__content, .footer__content`, {interval: 100});
-sr.reveal(`.about__data, .discount__img`, {origin: 'left'});
-sr.reveal(`.about__img, .discount__data`, {origin: 'right'});
+sr.reveal(`.category__data, .trick__content, .footer__content`, {
+  interval: 100,
+});
+sr.reveal(`.about__data, .discount__img`, { origin: 'left' });
+sr.reveal(`.about__img, .discount__data`, { origin: 'right' });
 
 /*=============== THEME SWITCHER ===============*/
 const root = document.documentElement;
-document.querySelector('.forest-switcher').addEventListener('click', () => root.className = 'forest');
-document.querySelector('.fire-switcher').addEventListener('click', () => root.className = 'fire');
-document.querySelector('.earth-switcher').addEventListener('click', () => root.className = 'earth');
-document.querySelector('.air-switcher').addEventListener('click', () => root.className = 'air');
-document.querySelector('.water-switcher').addEventListener('click', () => root.className = 'water');
-document.querySelector('.high-switcher').addEventListener('click', () => root.className = 'high');
+document
+  .querySelector('.forest-switcher')
+  .addEventListener('click', () => (root.className = 'forest'));
+document
+  .querySelector('.fire-switcher')
+  .addEventListener('click', () => (root.className = 'fire'));
+document
+  .querySelector('.earth-switcher')
+  .addEventListener('click', () => (root.className = 'earth'));
+document
+  .querySelector('.air-switcher')
+  .addEventListener('click', () => (root.className = 'air'));
+document
+  .querySelector('.water-switcher')
+  .addEventListener('click', () => (root.className = 'water'));
+document
+  .querySelector('.high-switcher')
+  .addEventListener('click', () => (root.className = 'high'));
 
 /*=============== SOCIAL FOOTER ===============*/ // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
 const dropdownTitleIcon = document.querySelector('.dropdown-title-icon');
@@ -137,7 +156,7 @@ const icons = {
   steam: 'bx bxl-steam',
   tiktok: 'bx bxl-tiktok',
   twitter: 'bx bxl-twitter',
-  youtube: 'bx bxl-youtube'
+  youtube: 'bx bxl-youtube',
 };
 
 const profiles = {
@@ -153,19 +172,35 @@ const profiles = {
   steam: 'steamcommunity.com/id/grafilango',
   tiktok: 'tiktok.com/@r.ot.en',
   twitter: 'twitter.com/martinmozos',
-  youtube: 'youtube.com/@euskalirria'
+  youtube: 'youtube.com/@euskalirria',
 };
 
-const listItems = ['Amazon', 'Facebook', 'GitHub', 'Instagram', 'Linkedin', 'Mastodon', 'Reddit', 'Spotify', 'StackOverflow', 'Steam', 'TikTok', 'Twitter', 'YouTube'];
+const listItems = [
+  'Amazon',
+  'Facebook',
+  'GitHub',
+  'Instagram',
+  'Linkedin',
+  'Mastodon',
+  'Reddit',
+  'Spotify',
+  'StackOverflow',
+  'Steam',
+  'TikTok',
+  'Twitter',
+  'YouTube',
+];
 
-const iconTemplate = (icon) => {
+const iconTemplate = icon => {
   return `<i class="${icon}"></i>`;
 };
 
 const listItemTemplate = (text, translateValue) => {
   return `<li class="dropdown-list-item">
     <button class="dropdown-button list-button" data-translate-value="${translateValue}%">
-    <span class="text-truncate">${text}&nbsp;${iconTemplate(icons[text.toLowerCase()])}</span>
+    <span class="text-truncate">${text}&nbsp;${iconTemplate(
+      icons[text.toLowerCase()]
+    )}</span>
     </button>
   </li>`;
 };
@@ -191,18 +226,19 @@ const setDropdownProps = (deg, ht, opacity) => {
 mainButton.addEventListener('click', () => {
   const listWrapperSizes = 3.5; // margins, paddings & borders
   const dropdownOpenHeight = 4.6 * listItems.length + listWrapperSizes;
-  const currDropdownHeight = root.style.getPropertyValue('--dropdown-height') || '0';
-  currDropdownHeight === '0' ?
-    setDropdownProps(180, dropdownOpenHeight, 1) :
-    setDropdownProps(0, 0, 0);
+  const currDropdownHeight =
+    root.style.getPropertyValue('--dropdown-height') || '0';
+  currDropdownHeight === '0'
+    ? setDropdownProps(180, dropdownOpenHeight, 1)
+    : setDropdownProps(0, 0, 0);
 });
 
-dropdownList.addEventListener('mouseover', (e) => {
+dropdownList.addEventListener('mouseover', e => {
   const translateValue = e.target.dataset.translateValue;
   root.style.setProperty('--translate-value', translateValue);
 });
 
-dropdownList.addEventListener('click', (e) => {
+dropdownList.addEventListener('click', e => {
   const clickedItemText = e.target.innerText.toLowerCase().trim();
   const clickedItemIcon = icons[clickedItemText];
 
@@ -216,7 +252,7 @@ dropdownList.addEventListener('click', (e) => {
   win.focus();
 });
 
-dropdownList.addEventListener('mousemove', (e) => {
+dropdownList.addEventListener('mousemove', e => {
   const iconSize = root.style.getPropertyValue('--floating-icon-size') || 0;
   const x = e.clientX - dropdownList.getBoundingClientRect().x;
   const y = e.clientY - dropdownList.getBoundingClientRect().y;
