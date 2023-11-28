@@ -71,32 +71,15 @@ $high: (
     --color-dark: #{map.get($high, 'dark')};
     --color-light: #{map.get($high, 'light')};
   }
-  --primary-bg-color: var(
-    --color-dark
-  ); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
-  --primary-color: var(
-    --color-light
-  ); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
-  --button-hover-bg-color: var(
-    --color-dark
-  ); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
-  --border-color: var(
-    --color-light
-  ); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
-  --body-color: linear-gradient(
-    90deg,
-    var(--color-light) 0%,
-    var(--color-dark) 100%
-  );
-  --container-color: linear-gradient(
-    136deg,
-    lighten(var(--color-light)) 0%,
-    lighten(var(--color-dark)) 100%
-  );
+  --primary-bg-color: var(--color-dark); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --primary-color: var(--color-light); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --button-hover-bg-color: var(--color-dark); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --border-color: var(--color-light); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --body-color: linear-gradient(90deg, var(--color-light) 0%, var(--color-dark) 100%);
+  --container-color: linear-gradient(136deg, lighten(var(--color-light)) 0%, lighten(var(--color-dark)) 100%);
   --container-color-repeating: repeating-linear-gradient(
     135deg,
-    /* @see https://css-tricks.com/snippets/css/css-repeating-gradients */
-      var(--color-light),
+    /* @see https://css-tricks.com/snippets/css/css-repeating-gradients */ var(--color-light),
     var(--color-light) 10px,
     var(--color-dark) 10px,
     var(--color-dark) 20px /* determines size */
@@ -107,9 +90,7 @@ $high: (
   --title-color: hsl(var(--hue), 4%, 100%);
   --text-color: hsl(var(--hue), 4%, 85%);
   --text-color-light: hsl(var(--hue), 4%, 55%);
-  --text-active: var(
-    --text-color
-  ); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
+  --text-active: var(--text-color); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
 
   /*========== Font and typography ==========*/
   --body-font: #{$font-family};

@@ -15,9 +15,7 @@ if (navToggle) {
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
 if (navClose) {
-  navClose.addEventListener('click', () =>
-    navMenu.classList.remove('show-menu')
-  );
+  navClose.addEventListener('click', () => navMenu.classList.remove('show-menu'));
 }
 
 /*=============== REMOVE MENU MOBILE ===============*/
@@ -28,7 +26,7 @@ function linkAction() {
   // When we click on each nav__link, we remove the show-menu class
   navMenu.classList.remove('show-menu');
 }
-navLink.forEach(n => n.addEventListener('click', linkAction));
+navLink.forEach((n) => n.addEventListener('click', linkAction));
 
 /*=============== HOME SWIPER ===============*/
 /*let homeSwiper = */ new Swiper('.home-swiper', {
@@ -69,19 +67,15 @@ const sections = document.querySelectorAll('section[id]');
 function scrollActive() {
   const scrollY = window.scrollY;
 
-  sections.forEach(current => {
+  sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 58;
     const sectionId = current.getAttribute('id');
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector('.nav__menu a[href*=' + sectionId + ']')
-        .classList.add('active-link');
+      document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link');
     } else {
-      document
-        .querySelector('.nav__menu a[href*=' + sectionId + ']')
-        .classList.remove('active-link');
+      document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link');
     }
   });
 }
@@ -117,27 +111,27 @@ sr.reveal(`.about__img, .discount__data`, { origin: 'right' });
 
 /*=============== THEME SWITCHER ===============*/
 const root = document.documentElement;
-document.querySelector('.forest-switcher').addEventListener('click', e => {
+document.querySelector('.forest-switcher').addEventListener('click', (e) => {
   e.preventDefault();
   root.className = 'forest';
 });
-document.querySelector('.fire-switcher').addEventListener('click', e => {
+document.querySelector('.fire-switcher').addEventListener('click', (e) => {
   e.preventDefault();
   root.className = 'fire';
 });
-document.querySelector('.earth-switcher').addEventListener('click', e => {
+document.querySelector('.earth-switcher').addEventListener('click', (e) => {
   e.preventDefault();
   root.className = 'earth';
 });
-document.querySelector('.air-switcher').addEventListener('click', e => {
+document.querySelector('.air-switcher').addEventListener('click', (e) => {
   e.preventDefault();
   root.className = 'air';
 });
-document.querySelector('.water-switcher').addEventListener('click', e => {
+document.querySelector('.water-switcher').addEventListener('click', (e) => {
   e.preventDefault();
   root.className = 'water';
 });
-document.querySelector('.high-switcher').addEventListener('click', e => {
+document.querySelector('.high-switcher').addEventListener('click', (e) => {
   e.preventDefault();
   root.className = 'high';
 });
@@ -197,16 +191,14 @@ const listItems = [
   'YouTube',
 ];
 
-const iconTemplate = icon => {
+const iconTemplate = (icon) => {
   return `<i class="${icon}"></i>`;
 };
 
 const listItemTemplate = (text, translateValue) => {
   return `<li class="dropdown-list-item">
     <button class="dropdown-button list-button" data-translate-value="${translateValue}%">
-    <span class="text-truncate">${text}&nbsp;${iconTemplate(
-      icons[text.toLowerCase()]
-    )}</span>
+    <span class="text-truncate">${text}&nbsp;${iconTemplate(icons[text.toLowerCase()])}</span>
     </button>
   </li>`;
 };
@@ -232,19 +224,16 @@ const setDropdownProps = (deg, ht, opacity) => {
 mainButton.addEventListener('click', () => {
   const listWrapperSizes = 3.5; // margins, paddings & borders
   const dropdownOpenHeight = 4.6 * listItems.length + listWrapperSizes;
-  const currDropdownHeight =
-    root.style.getPropertyValue('--dropdown-height') || '0';
-  currDropdownHeight === '0'
-    ? setDropdownProps(180, dropdownOpenHeight, 1)
-    : setDropdownProps(0, 0, 0);
+  const currDropdownHeight = root.style.getPropertyValue('--dropdown-height') || '0';
+  currDropdownHeight === '0' ? setDropdownProps(180, dropdownOpenHeight, 1) : setDropdownProps(0, 0, 0);
 });
 
-dropdownList.addEventListener('mouseover', e => {
+dropdownList.addEventListener('mouseover', (e) => {
   const translateValue = e.target.dataset.translateValue;
   root.style.setProperty('--translate-value', translateValue);
 });
 
-dropdownList.addEventListener('click', e => {
+dropdownList.addEventListener('click', (e) => {
   const clickedItemText = e.target.innerText.toLowerCase().trim();
   const clickedItemIcon = icons[clickedItemText];
 
@@ -258,7 +247,7 @@ dropdownList.addEventListener('click', e => {
   win.focus();
 });
 
-dropdownList.addEventListener('mousemove', e => {
+dropdownList.addEventListener('mousemove', (e) => {
   const iconSize = root.style.getPropertyValue('--floating-icon-size') || 0;
   const x = e.clientX - dropdownList.getBoundingClientRect().x;
   const y = e.clientY - dropdownList.getBoundingClientRect().y;
