@@ -1,7 +1,7 @@
 {
   "name": "responsive-landing-page",
   "version": "1.0.0",
-  "description": "Responsive Halloween Website Design Using HTML, CSS & JavaScript",
+  "description": "Responsive Halloween website using HTML, CSS and JavaScript",
   "homepage": "https://github.com/InoreNeronI/responsive-landing-page",
   "scripts": {
     "start": "parcel serve assets/html/*.html --open",

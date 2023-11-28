@@ -117,24 +117,30 @@ sr.reveal(`.about__img, .discount__data`, { origin: 'right' });
 
 /*=============== THEME SWITCHER ===============*/
 const root = document.documentElement;
-document
-  .querySelector('.forest-switcher')
-  .addEventListener('click', () => (root.className = 'forest'));
-document
-  .querySelector('.fire-switcher')
-  .addEventListener('click', () => (root.className = 'fire'));
-document
-  .querySelector('.earth-switcher')
-  .addEventListener('click', () => (root.className = 'earth'));
-document
-  .querySelector('.air-switcher')
-  .addEventListener('click', () => (root.className = 'air'));
-document
-  .querySelector('.water-switcher')
-  .addEventListener('click', () => (root.className = 'water'));
-document
-  .querySelector('.high-switcher')
-  .addEventListener('click', () => (root.className = 'high'));
+document.querySelector('.forest-switcher').addEventListener('click', e => {
+  e.preventDefault();
+  root.className = 'forest';
+});
+document.querySelector('.fire-switcher').addEventListener('click', e => {
+  e.preventDefault();
+  root.className = 'fire';
+});
+document.querySelector('.earth-switcher').addEventListener('click', e => {
+  e.preventDefault();
+  root.className = 'earth';
+});
+document.querySelector('.air-switcher').addEventListener('click', e => {
+  e.preventDefault();
+  root.className = 'air';
+});
+document.querySelector('.water-switcher').addEventListener('click', e => {
+  e.preventDefault();
+  root.className = 'water';
+});
+document.querySelector('.high-switcher').addEventListener('click', e => {
+  e.preventDefault();
+  root.className = 'high';
+});
 
 /*=============== SOCIAL FOOTER ===============*/ // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
 const dropdownTitleIcon = document.querySelector('.dropdown-title-icon');

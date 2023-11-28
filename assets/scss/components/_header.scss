@@ -82,9 +82,9 @@
   &__theme {
     max-width: 11rem;
     .color-switcher {
-      min-width: 1.5rem;
-      max-width: 1rem;
+      height: 1.5rem;
       padding: 0;
+      width: 1.5rem;
       &.forest-switcher {
         background-color: #3e6b4f;
       }
@@ -109,6 +109,7 @@
 
 /* Show menu */
 .show-menu {
+  background: var(--container-color-repeating);
   top: 0;
 }
 
