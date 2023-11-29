@@ -20,6 +20,7 @@
     align-items: center;
     column-gap: 0.5rem;
     font-weight: var(--font-medium);
+    z-index: 1;
 
     &-img {
       width: 1.25rem;
@@ -81,6 +82,7 @@
   }
   &__theme {
     max-width: 11rem;
+    z-index: 101;
     .color-switcher {
       height: 1.5rem;
       padding: 0;
@@ -109,14 +111,17 @@
 
 /* Show menu */
 .show-menu {
-  background: var(--container-color-repeating);
+  /*background: var(--container-color-repeating);*/
   top: 0;
+  + .nav__toggle {
+    visibility: hidden;
+  }
 }
 
 /* Change background header */
-.scroll-header {
+/*.scroll-header {
   background: var(--container-color-repeating);
-}
+}*/
 
 /* Active link */
 .active-link {

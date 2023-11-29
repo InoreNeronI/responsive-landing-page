@@ -28,7 +28,8 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.10.3",
-    "eslint": "^8.54.0",
+    "@parcel/validator-eslint": "^2.10.3",
+    "eslint": "^7.32.0",
     "parcel": "^2.10.3",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-extend": "^0.6.5",
