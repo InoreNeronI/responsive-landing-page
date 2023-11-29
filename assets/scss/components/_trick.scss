@@ -7,11 +7,11 @@
   }
   &__content {
     position: relative;
-    background: var(--container-color);
     border-radius: 1rem;
+    background: var(--container-color);
     padding: 1.5rem 0 1rem 0;
-    text-align: center;
     overflow: hidden;
+    text-align: center;
 
     &:hover .trick__img {
       transform: translateY(-0.5rem);
@@ -22,16 +22,16 @@
     }
   }
   &__img {
-    width: 90px;
     transition: 0.3s;
+    width: 90px;
   }
   &__subtitle,
   &__price {
     display: block;
   }
   &__subtitle {
-    font-size: var(--smaller-font-size);
     margin-bottom: var(--mb-0-5);
+    font-size: var(--smaller-font-size);
   }
   &__title,
   &__price {
@@ -41,14 +41,14 @@
   }
   &__button {
     display: inline-flex;
-    padding: 0.5rem;
-    border-radius: 0.25rem 0.25rem 0.75rem 0.25rem;
     position: absolute;
     right: -3rem;
     bottom: 0;
+    border-radius: 0.25rem 0.25rem 0.75rem 0.25rem;
+    padding: 0.5rem;
   }
   &__icon {
-    font-size: 1.25rem;
     color: var(--title-color);
+    font-size: 1.25rem;
   }
 }

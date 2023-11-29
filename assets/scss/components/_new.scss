@@ -4,18 +4,18 @@
     padding-top: 1rem;
   }
   &__img {
-    width: 120px;
-    margin-bottom: var(--mb-0-5);
     transition: 0.3s;
+    margin-bottom: var(--mb-0-5);
+    width: 120px;
   }
   &__content {
     position: relative;
-    background: var(--container-color);
-    width: 242px;
-    padding: 2rem 0 1.5rem 0;
     border-radius: 0.75rem;
-    text-align: center;
+    background: var(--container-color);
+    padding: 2rem 0 1.5rem 0;
+    width: 242px;
     overflow: hidden;
+    text-align: center;
 
     &:hover .new__img {
       transform: translateY(-0.5rem);
@@ -29,43 +29,43 @@
     position: absolute;
     top: 8%;
     left: 8%;
+    border-radius: 0.25rem;
     background-color: var(--first-color);
+    padding: 0.25rem 0.5rem;
     color: var(--title-color);
     font-size: var(--small-font-size);
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
   }
   &__title {
-    font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
+    font-size: var(--normal-font-size);
   }
   &__subtitle {
     display: block;
-    font-size: var(--small-font-size);
     margin-bottom: var(--mb-0-75);
+    font-size: var(--small-font-size);
   }
   &__prices {
     display: inline-flex;
-    align-items: center;
     column-gap: 0.5rem;
+    align-items: center;
   }
   &__price {
-    font-weight: var(--font-medium);
     color: var(--title-color);
+    font-weight: var(--font-medium);
   }
   &__discount {
     color: var(--first-color);
+    font-weight: var(--font-medium);
     font-size: var(--smaller-font-size);
     text-decoration: line-through;
-    font-weight: var(--font-medium);
   }
   &__button {
     display: inline-flex;
-    padding: 0.5rem;
-    border-radius: 0.25rem 0.25rem 0.75rem 0.25rem;
     position: absolute;
-    bottom: 0;
     right: -3rem;
+    bottom: 0;
+    border-radius: 0.25rem 0.25rem 0.75rem 0.25rem;
+    padding: 0.5rem;
   }
   &__icon {
     font-size: 1.25rem;

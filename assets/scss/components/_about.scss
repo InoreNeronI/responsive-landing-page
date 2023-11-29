@@ -10,8 +10,8 @@
     margin-bottom: var(--mb-2);
   }
   &__img {
-    width: 200px;
     justify-self: center;
     animation: floating 2s ease-in-out infinite;
+    width: 200px;
   }
 }

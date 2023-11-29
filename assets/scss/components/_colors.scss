@@ -45,32 +45,6 @@ $high: (
   --floating-icon-size: 26;
   --floating-icon-top: 0;
   --floating-icon-left: 0;
-
-  /*========== Colors ==========*/
-  &.forest {
-    --color-dark: #{map.get($forest, 'dark')};
-    --color-light: #{map.get($forest, 'light')};
-  }
-  &.fire {
-    --color-dark: #{map.get($fire, 'dark')};
-    --color-light: #{map.get($fire, 'light')};
-  }
-  &.earth {
-    --color-dark: #{map.get($earth, 'dark')};
-    --color-light: #{map.get($earth, 'light')};
-  }
-  &.air {
-    --color-dark: #{map.get($air, 'dark')};
-    --color-light: #{map.get($air, 'light')};
-  }
-  &.water {
-    --color-dark: #{map.get($water, 'dark')};
-    --color-light: #{map.get($water, 'light')};
-  }
-  &.high {
-    --color-dark: #{map.get($high, 'dark')};
-    --color-light: #{map.get($high, 'light')};
-  }
   --primary-bg-color: var(--color-dark); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
   --primary-color: var(--color-light); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
   --button-hover-bg-color: var(--color-dark); // @see https://codepen.io/zeeshanmukhtar1/pen/ExGGMgw
@@ -101,6 +75,32 @@ $high: (
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
   --smaller-font-size: 0.75rem;
+
+  /*========== Colors ==========*/
+  &.forest {
+    --color-dark: #{map.get($forest, 'dark')};
+    --color-light: #{map.get($forest, 'light')};
+  }
+  &.fire {
+    --color-dark: #{map.get($fire, 'dark')};
+    --color-light: #{map.get($fire, 'light')};
+  }
+  &.earth {
+    --color-dark: #{map.get($earth, 'dark')};
+    --color-light: #{map.get($earth, 'light')};
+  }
+  &.air {
+    --color-dark: #{map.get($air, 'dark')};
+    --color-light: #{map.get($air, 'light')};
+  }
+  &.water {
+    --color-dark: #{map.get($water, 'dark')};
+    --color-light: #{map.get($water, 'light')};
+  }
+  &.high {
+    --color-dark: #{map.get($high, 'dark')};
+    --color-light: #{map.get($high, 'light')};
+  }
 
   // Responsive typography
   @media screen and (min-width: 992px) {
