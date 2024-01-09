@@ -24,7 +24,14 @@
     width: 150px;
 
     &:hover {
-      transform: translateY(-0.5rem);
+      //transform: translateY(-0.5rem);
+      transition: margin 1s;
+      margin-left: 80%;
+    }
+
+    &:not(:hover) {
+      transition: margin 1s;
+      margin-left: initial;
     }
   }
 
